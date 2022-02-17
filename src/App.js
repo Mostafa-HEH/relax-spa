@@ -1,7 +1,15 @@
-import Typography from "@mui/material/Typography";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Layouts/Navbar";
 
 function App() {
-  return <Typography variant="h3">Hello world</Typography>;
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<div>Home</div>}></Route>
+      </Routes>
+    </>
+  );
 }
 
 export default App;
