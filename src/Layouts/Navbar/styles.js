@@ -1,6 +1,6 @@
 import { makeStyles } from "@mui/styles";
 
-export const useStyles = makeStyles((theme, drawerMatch) => ({
+export const useStyles = makeStyles((theme) => ({
   appbar: {
     "&.MuiAppBar-root": {
       backgroundColor: theme.palette.common.white,
@@ -14,21 +14,6 @@ export const useStyles = makeStyles((theme, drawerMatch) => ({
       flexDirection: "row",
       justifyContent: "space-between",
     },
-  },
-
-  logo: {
-    "&.MuiTypography-root": {
-      fontSize: "1.5rem",
-      fontWeight: "700",
-      "& a": {
-        color: theme.palette.common.black,
-        textDecoration: "none",
-      },
-    },
-  },
-
-  logoColor: {
-    color: theme.palette.common.green,
   },
 
   navList: {
