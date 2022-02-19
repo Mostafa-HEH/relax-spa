@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
@@ -15,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { useStyles } from "./styles";
+import Logo from "../Logo";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -52,14 +51,7 @@ const Navbar = (props) => {
         <AppBar className={classes.appbar}>
           {drawerMatch ? (
             <Toolbar className={classes.toolbar}>
-              <Typography variant="h1" component="h1" className={classes.logo}>
-                <Link to="/">
-                  <Box className={classes.logoColor} component="span">
-                    Relax
-                  </Box>{" "}
-                  spa
-                </Link>
-              </Typography>
+              <Logo type="link" />
               <MenuIcon
                 onClick={toggleDrawer(true)}
                 fontSize="large"
@@ -68,14 +60,7 @@ const Navbar = (props) => {
             </Toolbar>
           ) : (
             <Toolbar className={classes.toolbar}>
-              <Typography variant="h1" component="h1" className={classes.logo}>
-                <Link to="/">
-                  <Box className={classes.logoColor} component="span">
-                    Relax
-                  </Box>{" "}
-                  spa
-                </Link>
-              </Typography>
+              <Logo type="link" />
               <List className={classes.navList}>
                 <ListItem
                   className={`${classes.navListItem} ${classes.active}`}
@@ -101,14 +86,7 @@ const Navbar = (props) => {
             onClose={toggleDrawer(false)}
             className={classes.drawer}
           >
-            <Typography variant="h1" component="h1" className={classes.logo}>
-              <Link to="/">
-                <Box className={classes.logoColor} component="span">
-                  Relax
-                </Box>{" "}
-                spa
-              </Link>
-            </Typography>
+            <Logo type="link" />
             <List className={classes.navList}>
               <ListItem className={classes.navListItem}>
                 <Link to="/">Home</Link>
