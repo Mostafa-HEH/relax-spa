@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 
 import { useStyles } from "./styles";
 import PageNavegate from "../../../Layouts/PageNavegate";
+import WorkTime from "./WorkTime";
 
 import greenImg from "../../../Assets/Images/hero-section-png.png";
 
@@ -27,6 +28,7 @@ const HeroSection = () => {
         <PageNavegate name="View our services" link="/services" />
       </Grid>
       <Box component="img" src={greenImg} className={classes.image} />
+      <WorkTime />
     </Grid>
   );
 };
