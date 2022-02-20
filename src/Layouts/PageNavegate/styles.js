@@ -9,6 +9,7 @@ export const useStyles = makeStyles((theme) => ({
       gap: "14px",
       color: theme.palette.common.black,
       textDecorationColor: theme.palette.common.black,
+      width: "fit-content",
 
       "& a": {
         color: theme.palette.common.black,

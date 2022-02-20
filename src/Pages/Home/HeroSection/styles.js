@@ -14,11 +14,12 @@ export const useStyles = makeStyles((theme) => ({
       marginRight: "auto",
       borderRadius: theme.shape.borderRadius,
       maxWidth: "1100px",
-      border: "2px solid #ededed",
+      boxShadow: theme.shadows[2],
 
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(2),
         alignItems: "center",
+        paddingBottom: theme.spacing(8),
       },
     },
   },
