@@ -15,14 +15,18 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: sx({
-          backgroundColor: "#28b761",
+          // backgroundColor: "#28b761",
           textTransform: "capitalize",
-
-          "&:hover": {
-            backgroundColor: "#28b761",
-          },
+          // borderRadius: "unset",
+          // "&:hover": {
+          //   backgroundColor: "#28b761",
+          // },
         }),
       },
     },
+  },
+
+  shape: {
+    borderRadius: 0,
   },
 });
