@@ -4,6 +4,7 @@ import { useStyles } from "./styles";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import OffersSection from "./OffersSection";
+import ServicesReviewSection from './ServicesReviewSection';
 
 const Home = () => {
   const classes = useStyles();
@@ -13,6 +14,7 @@ const Home = () => {
       <HeroSection />
       <AboutSection />
       <OffersSection />
+      <ServicesReviewSection/>
     </Grid>
   );
 };

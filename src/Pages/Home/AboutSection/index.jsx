@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import { useStyles } from "./styles";
-import PageNavegate from "../../../Layouts/PageNavegate";
+import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
 import DepartmentsCard from "./DepartmentsCard";
 
 import differentTypesOfMassage from "../../../Assets/Images/about-massage.png";
@@ -15,17 +15,11 @@ const AboutSection = () => {
 
   return (
     <Grid item container className={classes.container}>
-      <Grid item container className={classes.headContainer}>
-        <Grid item xs={12} sm={4}></Grid>
-        <Grid item xs={12} sm={4}>
-          <Typography component="h3" className={classes.heading}>
-            About us
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={4} className={classes.aboutLink}>
-          <PageNavegate name="More about us" link="/about" />
-        </Grid>
-      </Grid>
+      <SectionsTitleWithLink
+        heading="About us"
+        linkName="More about us"
+        link="/about"
+      />
       <Grid item>
         <Typography component="p" className={classes.description}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
