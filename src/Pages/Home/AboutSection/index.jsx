@@ -14,7 +14,7 @@ const AboutSection = () => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.container}>
+    <Grid item container className={classes.container}>
       <Grid item container className={classes.headContainer}>
         <Grid item xs={12} sm={4}></Grid>
         <Grid item xs={12} sm={4}>

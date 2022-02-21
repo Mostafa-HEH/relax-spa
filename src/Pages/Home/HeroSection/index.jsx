@@ -12,7 +12,7 @@ const HeroSection = () => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.container}>
+    <Grid item container className={classes.container}>
       <Grid item className={classes.gridItem}>
         <Typography component="h2" className={classes.maintitle}>
           Make the stress of daily life skip away, Make it a great day
