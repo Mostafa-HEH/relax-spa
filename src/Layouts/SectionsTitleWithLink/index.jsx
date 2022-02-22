@@ -16,7 +16,7 @@ const SectionsTitleWithLink = ({ heading, linkName, link }) => {
         </Typography>
       </Grid>
       <Grid item xs={12} sm={4} className={classes.aboutLink}>
-        <PageNavegate name={linkName} link={link} />
+        {link ? <PageNavegate name={linkName} link={link} /> : null}
       </Grid>
     </Grid>
   );
