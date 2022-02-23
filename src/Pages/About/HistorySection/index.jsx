@@ -2,6 +2,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import { useStyles } from "./styles";
+import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
 
 const HistorySection = () => {
   const classes = useStyles();
@@ -9,12 +10,10 @@ const HistorySection = () => {
   return (
     <Grid item container className={classes.container}>
       <Grid item xs={12}>
-        <Typography component="h3" className={classes.head}>
-          Spa history
-        </Typography>
+        <SectionsTitleWithLink heading="Spa history" />
       </Grid>
-      <Grid item xs={12} md={10}>
-        <Typography component="p">
+      <Grid item xs={12}>
+        <Typography component="p" className={classes.pargraph}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
           tempor urna. Integer finibus faucibus nibh et euismod. Lorem ipsum
           dolor sit amet, consectetur adipiscing elit. Quisque ut tempor urna.

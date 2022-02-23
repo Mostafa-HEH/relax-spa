@@ -4,16 +4,16 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     "&.MuiGrid-root": {
       paddingTop: theme.spacing(8),
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2),
       gap: theme.spacing(2),
+      textAlign: "center",
+      maxWidth: "95%",
     },
   },
 
-  head: {
+  pargraph: {
     "&.MuiTypography-root": {
-      fontSize: "1.5rem",
-      fontWeight: "700",
+      maxWidth: "95%",
+      margin: "auto",
     },
   },
 }));
