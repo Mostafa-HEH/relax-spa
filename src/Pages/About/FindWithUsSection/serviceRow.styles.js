@@ -11,6 +11,12 @@ export const useStyles = makeStyles((theme) => ({
       maxWidth: "90%",
       margin: "auto",
       gap: theme.spacing(2),
+
+      "& img": {
+        [theme.breakpoints.down("md")]: {
+          width: "100%",
+        },
+      },
     },
   },
 
