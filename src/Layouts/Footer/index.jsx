@@ -3,12 +3,10 @@ import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 
 import { useStyles } from "./styles.js";
 import Logo from "../Logo";
+import SocialLinks from "../SocialLinks";
 
 const Footer = () => {
   const classes = useStyles();
@@ -33,17 +31,7 @@ const Footer = () => {
             <Link to="/connectus">Connect us</Link>
           </ListItem>
         </Grid>
-        <Grid item className={classes.social}>
-          <Link to="//www.instagram.com/" target="_blank">
-            <InstagramIcon className={classes.icon} />
-          </Link>
-          <Link to="//www.facebook.com/" target="_blank">
-            <FacebookIcon className={classes.icon} />
-          </Link>
-          <Link to="//www.facebook.com/" target="_blank">
-            <TwitterIcon className={classes.icon} />
-          </Link>
-        </Grid>
+        <SocialLinks />
       </Grid>
       <Grid item component={Divider} className={classes.divider} xs={6}></Grid>
       <Grid item className={classes.copyright} xs={12}>
