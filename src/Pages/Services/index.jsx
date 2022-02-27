@@ -4,6 +4,7 @@ import { useStyles } from "./styles";
 import SearchSection from "./SearchSection";
 import FilterTagsSection from "./FilterTagsSection";
 import Products from "./Products";
+import SeeMoreButton from "./SeeMoreButton";
 
 const Services = () => {
   const classes = useStyles();
@@ -13,6 +14,7 @@ const Services = () => {
       <SearchSection />
       <FilterTagsSection />
       <Products />
+      <SeeMoreButton />
     </Grid>
   );
 };
