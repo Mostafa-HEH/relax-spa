@@ -77,7 +77,9 @@ const Navbar = (props) => {
                   <Link to="/connectus">Connect us</Link>
                 </ListItem>
               </List>
-              <Button variant="contained">Make an appointment</Button>
+              <Button variant="contained" component={Link} to="/reservation">
+                Make an appointment
+              </Button>
             </Toolbar>
           )}
 
