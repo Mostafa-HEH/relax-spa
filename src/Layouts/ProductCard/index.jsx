@@ -4,7 +4,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import { useStyles } from "./serviceCard.styles";
+
+import { useStyles } from "./styles";
 
 const ServiceCard = ({ image, productName, details, price, duration }) => {
   const classes = useStyles();
