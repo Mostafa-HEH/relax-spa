@@ -7,4 +7,8 @@ export const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(8),
     },
   },
+
+  subContainer: {
+    "&.MuiGrid-root": {},
+  },
 }));
