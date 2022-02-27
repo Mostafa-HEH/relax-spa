@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 
 import { useStyles } from "./styles";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "../../../Layouts/ProductCard";
 import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
 
 import serviceOne from "../../../Assets/Images/more-related-products.png";
