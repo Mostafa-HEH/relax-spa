@@ -11,6 +11,7 @@ export const useStyles = makeStyles((theme) => ({
       padding: `${theme.spacing(8)} ${theme.spacing(10)}`,
       boxShadow: theme.shadows[2],
       backgroundColor: theme.palette.common.white,
+      gap: theme.spacing(4),
 
       [theme.breakpoints.down("sm")]: {
         padding: `${theme.spacing(8)} ${theme.spacing(2)}`,
