@@ -8,8 +8,9 @@ import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 
 import { useStyles } from "./personalSlide.styles";
+import Buttons from "./Buttons";
 
-const PersonalSlide = () => {
+const PersonalSlide = ({ step, handleNext }) => {
   const classes = useStyles();
 
   const formik = useFormik({
@@ -22,6 +23,7 @@ const PersonalSlide = () => {
       numberofperson: "",
     },
     onSubmit: (values) => {
+      handleNext();
       console.log(values);
     },
   });
@@ -121,6 +123,7 @@ const PersonalSlide = () => {
           />
         </FormControl>
       </Grid>
+      <Buttons step={step} />
     </Grid>
   );
 };
