@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 
 import { useStyles } from "./startSlide.styles";
 
-const StartSlide = () => {
+const StartSlide = ({ setStep }) => {
   const classes = useStyles();
 
   return (
@@ -18,7 +18,9 @@ const StartSlide = () => {
         <Button variant="text">Call us +20123456789</Button>
       </Grid>
       <Grid item>
-        <Button variant="contained">Make an appointment</Button>
+        <Button variant="contained" onClick={() => setStep((prev) => prev + 1)}>
+          Make an appointment
+        </Button>
       </Grid>
     </Grid>
   );
