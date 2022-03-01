@@ -23,8 +23,7 @@ const PersonalSlide = ({ step, handleNext }) => {
       numberofperson: "",
     },
     onSubmit: (values) => {
-      handleNext();
-      console.log(values);
+      handleNext(values);
     },
   });
 
