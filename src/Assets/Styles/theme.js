@@ -5,6 +5,13 @@ export const theme = createTheme({
     common: {
       green: "#28b761",
     },
+
+    primary: {
+      main: "#28b761",
+      light: "#74D69C",
+      dark: "#003A17",
+      contrastText: "#FDFDFD",
+    },
   },
 
   typography: {
@@ -15,12 +22,7 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: sx({
-          // backgroundColor: "#28b761",
           textTransform: "capitalize",
-          // borderRadius: "unset",
-          // "&:hover": {
-          //   backgroundColor: "#28b761",
-          // },
         }),
       },
     },
