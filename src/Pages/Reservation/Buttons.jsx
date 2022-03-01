@@ -7,7 +7,7 @@ const Buttons = ({ step, handleBack, data }) => {
   const classes = useStyles();
 
   const backRender = (currentStep) => {
-    if (currentStep > 0) {
+    if (currentStep > 1) {
       return (
         <Grid item>
           <Button variant="text" size="large" onClick={() => handleBack(data)}>
@@ -18,14 +18,29 @@ const Buttons = ({ step, handleBack, data }) => {
     }
   };
 
-  return (
-    <Grid item container className={classes.container}>
-      {backRender(step)}
+  const nextRender = (currentStep) => {
+    if (currentStep === 2) {
+      return (
+        <Grid item>
+          <Button variant="contained" size="large" type="submit">
+            Finish
+          </Button>
+        </Grid>
+      );
+    }
+    return (
       <Grid item>
         <Button variant="contained" size="large" type="submit">
           Next
         </Button>
       </Grid>
+    );
+  };
+
+  return (
+    <Grid item container className={classes.container}>
+      {backRender(step)}
+      {nextRender(step)}
     </Grid>
   );
 };
