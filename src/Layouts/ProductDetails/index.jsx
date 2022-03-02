@@ -1,11 +1,13 @@
 import Grid from "@mui/material/Grid";
+import { useParams } from "react-router-dom";
 
 import { useStyles } from "./styles";
-import ServiceCard from "../../../Layouts/ProductCard";
-import serviceOne from "../../../Assets/Images/more-related-products.png";
+import serviceOne from "../../Assets/Images/more-related-products.png";
 
-const Products = () => {
+const ProductDetails = () => {
   const classes = useStyles();
+
+  const { productId } = useParams();
 
   const products = [
     {
@@ -118,21 +120,20 @@ const Products = () => {
     },
   ];
 
+  const [product] = products.filter((product) => {
+    return (
+      productId ===
+      `${product.name.replace(/\s/g, "").toLowerCase()}${
+        product.id
+      }-${product.duration.replace(/\s/g, "").toLowerCase()}`
+    );
+  });
+
   return (
     <Grid item container className={classes.container}>
-      {products.map(({ id, name, price, duration, description, images }) => (
-        <ServiceCard
-          key={id}
-          id={id}
-          image={images[0]}
-          name={name}
-          price={price}
-          duration={duration}
-          description={description}
-        />
-      ))}
+      {product.name}
     </Grid>
   );
 };
 
-export default Products;
+export default ProductDetails;
