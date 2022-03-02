@@ -1,4 +1,5 @@
 import Grid from "@mui/material/Grid";
+import { Outlet } from "react-router-dom";
 
 import { useStyles } from "./styles";
 import SearchSection from "./SearchSection";
@@ -10,12 +11,15 @@ const Services = () => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.container}>
-      <SearchSection />
-      <FilterTagsSection />
-      <Products />
-      <SeeMoreButton />
-    </Grid>
+    <>
+      <Grid container className={classes.container}>
+        <SearchSection />
+        <FilterTagsSection />
+        <Products />
+        <SeeMoreButton />
+      </Grid>
+      <Outlet />
+    </>
   );
 };
 
