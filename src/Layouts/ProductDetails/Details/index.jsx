@@ -1,11 +1,9 @@
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
 
 import { useStyles } from "./styles";
 
-const Details = ({ product, tab, setTab }) => {
+const Details = ({ product }) => {
   const classes = useStyles();
 
   return (
@@ -38,17 +36,6 @@ const Details = ({ product, tab, setTab }) => {
           <Grid item className={classes.feedbackItemsInfo}>
             95%
           </Grid>
-        </Grid>
-      </Grid>
-      <Grid item container className={classes.bookPriceContainer}>
-        <Grid item className={classes.priceContainer}>
-          $
-          <Box component="span" className={classes.price}>
-            {product.price}
-          </Box>
-        </Grid>
-        <Grid item>
-          <Button variant="contained">Book it now</Button>
         </Grid>
       </Grid>
     </Grid>
