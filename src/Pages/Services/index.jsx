@@ -1,5 +1,4 @@
 import Grid from "@mui/material/Grid";
-import { Outlet } from "react-router-dom";
 
 import { useStyles } from "./styles";
 import SearchSection from "./SearchSection";
@@ -18,7 +17,6 @@ const Services = () => {
         <Products />
         <SeeMoreButton />
       </Grid>
-      <Outlet />
     </>
   );
 };

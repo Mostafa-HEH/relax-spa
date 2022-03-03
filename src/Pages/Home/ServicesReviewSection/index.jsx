@@ -60,10 +60,10 @@ const ServicesReviewSection = () => {
           <ServiceCard
             key={id}
             image={images[0]}
-            productName={name}
+            name={name}
             price={price}
             duration={duration}
-            details={description}
+            description={description}
           />
         ))}
       </Grid>
