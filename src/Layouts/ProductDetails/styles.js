@@ -11,6 +11,8 @@ export const useStyles = makeStyles((theme) => ({
       position: "relative",
       overflow: "hidden",
       alignItems: "center",
+      alignSelf: "center",
+
       [theme.breakpoints.down("md")]: {
         height: "300px",
       },

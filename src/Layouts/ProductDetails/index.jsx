@@ -8,6 +8,7 @@ import { useStyles } from "./styles";
 import serviceOne from "../../Assets/Images/fullproduct-slide.png";
 import Details from "./Details";
 import HowItRuns from "./HowItRun";
+import Review from "./Review";
 
 const ProductDetails = (props) => {
   const [tab, setTab] = useState("product-details");
@@ -136,6 +137,8 @@ const ProductDetails = (props) => {
         return <Details product={product} />;
       case "how-to-run":
         return <HowItRuns />;
+      case "review":
+        return <Review />;
       default:
         <div>Something wrong</div>;
     }
