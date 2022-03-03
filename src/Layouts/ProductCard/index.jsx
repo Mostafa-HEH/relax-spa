@@ -15,9 +15,7 @@ const ServiceCard = ({ id, image, name, description, price, duration }) => {
     <Card className={classes.container}>
       <CardActionArea
         component={Link}
-        to={`/services/${name.replace(/\s/g, "").toLowerCase()}${id}-${duration
-          .replace(/\s/g, "")
-          .toLowerCase()}`}
+        to={`/services/${name?.toLowerCase().split(" ").join("-")}`}
       >
         <CardMedia
           component="img"
