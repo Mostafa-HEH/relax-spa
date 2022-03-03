@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import { useParams } from "react-router-dom";
 
 import { useStyles } from "./styles";
 import serviceOne from "../../Assets/Images/fullproduct-slide.png";
 import Details from "./Details";
+import HowItRuns from "./HowItRun";
 
 const ProductDetails = (props) => {
   const [tab, setTab] = useState("product-details");
@@ -131,7 +133,9 @@ const ProductDetails = (props) => {
   const renderHelper = (tab) => {
     switch (tab) {
       case "product-details":
-        return <Details product={product} tab={tab} setTab={setTab} />;
+        return <Details product={product} />;
+      case "how-to-run":
+        return <HowItRuns />;
       default:
         <div>Something wrong</div>;
     }
@@ -173,8 +177,20 @@ const ProductDetails = (props) => {
             Review
           </Grid>
         </Grid>
-
-        {renderHelper(tab)}
+        <Grid item container className={classes.desContainer}>
+          {renderHelper(tab)}
+          <Grid item container className={classes.bookPriceContainer}>
+            <Grid item className={classes.priceContainer}>
+              $
+              <Box component="span" className={classes.price}>
+                {product.price}
+              </Box>
+            </Grid>
+            <Grid item>
+              <Button variant="contained">Book it now</Button>
+            </Grid>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );

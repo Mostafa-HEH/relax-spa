@@ -56,4 +56,28 @@ export const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
   },
+
+  bookPriceContainer: {
+    "&.MuiGrid-root": {
+      justifyContent: "space-between",
+      alignItems: "center",
+      maxWidth: "90%",
+
+      [theme.breakpoints.down("md")]: {
+        maxWidth: "unset",
+        justifyContent: "center",
+        gap: theme.spacing(6),
+      },
+    },
+  },
+
+  priceContainer: {
+    "&.MuiGrid-root": {
+      color: theme.palette.primary.main,
+    },
+  },
+
+  price: {
+    fontSize: "3rem",
+  },
 }));
