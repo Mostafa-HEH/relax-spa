@@ -3,14 +3,22 @@ import { createTheme, experimental_sx as sx } from "@mui/material/styles";
 export const theme = createTheme({
   palette: {
     common: {
-      green: "#28b761",
+      lightGreen: "#00C897",
+      lightYellow: "#FDFFA9",
     },
 
     primary: {
-      main: "#28b761",
-      light: "#74D69C",
-      dark: "#003A17",
-      contrastText: "#FDFDFD",
+      main: "#019267",
+      light: "#3CAA89",
+      dark: "#006144",
+      contrastText: "#fff",
+    },
+
+    secondary: {
+      main: "#FFD365",
+      light: "#FFEBBA",
+      dark: "#CD9816",
+      contrastText: "#000",
     },
   },
 

@@ -5,12 +5,17 @@ import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
 import List from "@mui/material/List";
+import Box from "@mui/material/Box";
 import ListItem from "@mui/material/ListItem";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
+import CallIcon from "@mui/icons-material/Call";
 
 import { useStyles } from "./styles";
 import Logo from "../Logo";
@@ -60,7 +65,7 @@ const Navbar = (props) => {
         setActive("connect");
         break;
       default:
-        setActive("home");
+        setActive("");
         break;
     }
   }, []);
@@ -75,7 +80,6 @@ const Navbar = (props) => {
               <Logo type="link" />
               <MenuIcon
                 onClick={toggleDrawer(true)}
-                fontSize="large"
                 className={classes.menuIcon}
               />
             </Toolbar>
@@ -89,7 +93,10 @@ const Navbar = (props) => {
                   }`}
                   onClick={() => setActive("home")}
                 >
-                  <Link to="/">Home</Link>
+                  <Link to="/">
+                    <HomeIcon fontSize="small" />
+                    <Box component="span">Home</Box>
+                  </Link>
                 </ListItem>
                 <ListItem
                   className={`${classes.navListItem} ${
@@ -97,7 +104,10 @@ const Navbar = (props) => {
                   }`}
                   onClick={() => setActive("about")}
                 >
-                  <Link to="/about">About us</Link>
+                  <Link to="/about">
+                    <InfoIcon fontSize="small" />
+                    <Box component="span">About us</Box>
+                  </Link>
                 </ListItem>
                 <ListItem
                   className={`${classes.navListItem} ${
@@ -105,7 +115,10 @@ const Navbar = (props) => {
                   }`}
                   onClick={() => setActive("services")}
                 >
-                  <Link to="/services">Our services</Link>
+                  <Link to="/services">
+                    <MedicalServicesIcon fontSize="small" />
+                    <Box component="span">Our services</Box>
+                  </Link>
                 </ListItem>
                 <ListItem
                   className={`${classes.navListItem} ${
@@ -113,7 +126,10 @@ const Navbar = (props) => {
                   }`}
                   onClick={() => setActive("connect")}
                 >
-                  <Link to="/connectus">Connect us</Link>
+                  <Link to="/connectus">
+                    <CallIcon fontSize="small" />
+                    <Box component="span">Connect us</Box>
+                  </Link>
                 </ListItem>
               </List>
               <Button variant="contained" component={Link} to="/reservation">
@@ -129,17 +145,49 @@ const Navbar = (props) => {
           >
             <Logo type="link" />
             <List className={classes.navList}>
-              <ListItem className={classes.navListItem}>
-                <Link to="/">Home</Link>
+              <ListItem
+                className={`${classes.navListItem} ${
+                  active === "home" ? classes.active : null
+                }`}
+                onClick={() => setActive("home")}
+              >
+                <Link to="/">
+                  <HomeIcon fontSize="small" />
+                  <Box component="span">Home</Box>
+                </Link>
               </ListItem>
-              <ListItem className={classes.navListItem}>
-                <Link to="/about">About us</Link>
+              <ListItem
+                className={`${classes.navListItem} ${
+                  active === "about" ? classes.active : null
+                }`}
+                onClick={() => setActive("about")}
+              >
+                <Link to="/about">
+                  <InfoIcon fontSize="small" />
+                  <Box component="span">About us</Box>
+                </Link>
               </ListItem>
-              <ListItem className={classes.navListItem}>
-                <Link to="/services">Our services</Link>
+              <ListItem
+                className={`${classes.navListItem} ${
+                  active === "services" ? classes.active : null
+                }`}
+                onClick={() => setActive("services")}
+              >
+                <Link to="/services">
+                  <MedicalServicesIcon fontSize="small" />
+                  <Box component="span">Our services</Box>
+                </Link>
               </ListItem>
-              <ListItem className={classes.navListItem}>
-                <Link to="/connectus">Connect us</Link>
+              <ListItem
+                className={`${classes.navListItem} ${
+                  active === "connect" ? classes.active : null
+                }`}
+                onClick={() => setActive("connect")}
+              >
+                <Link to="/connectus">
+                  <CallIcon fontSize="small" />
+                  <Box component="span">Connect us</Box>
+                </Link>
               </ListItem>
             </List>
             <Button variant="contained">Make an appointment</Button>
