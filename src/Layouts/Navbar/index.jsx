@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -29,6 +29,7 @@ function HideOnScroll(props) {
 }
 
 const Navbar = (props) => {
+  const [active, setActive] = useState("home");
   const [drawer, setDrawer] = useState(false);
   const drawerMatch = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const classes = useStyles(props);
@@ -43,6 +44,26 @@ const Navbar = (props) => {
 
     setDrawer(anchor);
   };
+
+  useEffect(() => {
+    switch (window.location.pathname) {
+      case "/":
+        setActive("home");
+        break;
+      case "/about":
+        setActive("about");
+        break;
+      case "/services":
+        setActive("services");
+        break;
+      case "/connectus":
+        setActive("connect");
+        break;
+      default:
+        setActive("home");
+        break;
+    }
+  }, []);
 
   return (
     <>
@@ -63,17 +84,35 @@ const Navbar = (props) => {
               <Logo type="link" />
               <List className={classes.navList}>
                 <ListItem
-                  className={`${classes.navListItem} ${classes.active}`}
+                  className={`${classes.navListItem} ${
+                    active === "home" ? classes.active : null
+                  }`}
+                  onClick={() => setActive("home")}
                 >
                   <Link to="/">Home</Link>
                 </ListItem>
-                <ListItem className={classes.navListItem}>
+                <ListItem
+                  className={`${classes.navListItem} ${
+                    active === "about" ? classes.active : null
+                  }`}
+                  onClick={() => setActive("about")}
+                >
                   <Link to="/about">About us</Link>
                 </ListItem>
-                <ListItem className={classes.navListItem}>
+                <ListItem
+                  className={`${classes.navListItem} ${
+                    active === "services" ? classes.active : null
+                  }`}
+                  onClick={() => setActive("services")}
+                >
                   <Link to="/services">Our services</Link>
                 </ListItem>
-                <ListItem className={classes.navListItem}>
+                <ListItem
+                  className={`${classes.navListItem} ${
+                    active === "connect" ? classes.active : null
+                  }`}
+                  onClick={() => setActive("connect")}
+                >
                   <Link to="/connectus">Connect us</Link>
                 </ListItem>
               </List>
