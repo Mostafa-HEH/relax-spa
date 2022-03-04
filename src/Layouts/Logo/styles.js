@@ -3,8 +3,9 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) => ({
   logo: {
     "&.MuiTypography-root": {
-      fontSize: "1.5rem",
-      fontWeight: "700",
+      fontSize: "2rem",
+      fontWeight: "400",
+
       "& a": {
         color: ({ color }) => (color ? color : theme.palette.common.black),
         textDecoration: "none",
@@ -13,6 +14,6 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   logoColor: {
-    color: theme.palette.common.green,
+    color: theme.palette.primary.main,
   },
 }));

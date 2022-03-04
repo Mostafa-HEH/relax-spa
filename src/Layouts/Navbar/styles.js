@@ -4,6 +4,8 @@ export const useStyles = makeStyles((theme) => ({
   appbar: {
     "&.MuiAppBar-root": {
       backgroundColor: theme.palette.common.white,
+      boxShadow: theme.shadows[0],
+      borderBottom: `2px solid ${theme.palette.secondary.main}`,
       color: theme.palette.common.black,
     },
   },
@@ -29,10 +31,12 @@ export const useStyles = makeStyles((theme) => ({
   navListItem: {
     "&.MuiListItem-root": {
       whiteSpace: "nowrap",
-      fontWeight: "600",
+      fontWeight: "400",
       "& a": {
         color: theme.palette.common.black,
         textDecoration: "none",
+        display: "flex",
+        gap: "0.2rem",
       },
     },
   },
@@ -40,7 +44,7 @@ export const useStyles = makeStyles((theme) => ({
   active: {
     "&.MuiListItem-root": {
       "& a": {
-        color: theme.palette.common.green,
+        color: theme.palette.primary.main,
       },
     },
   },
@@ -48,6 +52,7 @@ export const useStyles = makeStyles((theme) => ({
   menuIcon: {
     "&.MuiSvgIcon-root": {
       cursor: "pointer",
+      color: theme.palette.primary.main,
     },
   },
 
