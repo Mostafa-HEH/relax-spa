@@ -16,6 +16,10 @@ export const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       marginLeft: theme.spacing(16),
       marginBottom: theme.spacing(8),
+      backgroundColor: "#ffd36552",
+      padding: "1rem",
+      width: "fit-content",
+
       [theme.breakpoints.down("sm")]: {
         marginLeft: 0,
         alignItems: "center",
@@ -28,7 +32,7 @@ export const useStyles = makeStyles((theme) => ({
     "&.MuiGrid-root": {
       display: "flex",
       flexDirection: "row",
-      fontWeight: "800",
+      fontWeight: "300",
       fontSize: "1.1rem",
       alignItems: "baseline",
     },
@@ -36,7 +40,7 @@ export const useStyles = makeStyles((theme) => ({
 
   title: {
     "&.MuiGrid-root": {
-      fontWeight: "800",
+      fontWeight: "400",
       fontSize: "1.2rem",
     },
   },
@@ -48,6 +52,6 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   currentStep: {
-    fontSize: "1.5rem",
+    fontSize: "2rem",
   },
 }));

@@ -1,48 +1,61 @@
 import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 import { useStyles } from "./styles";
 import "./leaflet.css";
-import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
+import SectionsTitle from "../../../Layouts/SectionsTitle";
 
 const WhereFindUsSection = () => {
   const classes = useStyles();
 
   return (
     <Grid item container className={classes.container}>
-      <SectionsTitleWithLink heading="Where you can find us" />
-      <Grid item container>
+      <SectionsTitle color="secondary" title="Where us" />
+      <Grid item container className={classes.phoneAdressContainer}>
         <Grid item container xs={12} sm={6} className={classes.adresses}>
           <Grid item container className={classes.adressContainer}>
             <Grid item className={classes.adress}>
-              123ST, Mansoura, Egypt
+              123 St, Mansoura, Egypt
             </Grid>
             <Grid item container className={classes.phoneContainer}>
-              <Grid item component={PhoneIcon} />
-              <Grid item>+20123456789</Grid>
+              <Grid item component={PhoneIcon} className={classes.icon} />
+              <Grid item>
+                <Link href="tel:0020123456789" color="common.black">
+                  +20123456789
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
           <Grid item container className={classes.adressContainer}>
             <Grid item className={classes.adress}>
-              123ST, Alexandria, Egypt
+              123 St, Alexandria, Egypt
             </Grid>
             <Grid item container className={classes.phoneContainer}>
-              <Grid item component={PhoneIcon} />
-              <Grid item>+20123456789</Grid>
+              <Grid item component={PhoneIcon} className={classes.icon} />
+              <Grid item>
+                <Link href="tel:0020123456789" color="common.black">
+                  +20123456789
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
           <Grid item container className={classes.adressContainer}>
             <Grid item className={classes.adress}>
-              123ST, Cairo, Egypt
+              123 St, Cairo, Egypt
             </Grid>
             <Grid item container className={classes.phoneContainer}>
-              <Grid item component={PhoneIcon} />
-              <Grid item>+20123456789</Grid>
+              <Grid item component={PhoneIcon} className={classes.icon} />
+              <Grid item>
+                <Link href="tel:0020123456789" color="common.black">
+                  +20123456789
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={6} className={classes.map}>
+        <Grid item xs={12} sm={6} className={classes.map}>
           <MapContainer center={[31.037933, 31.381523]} zoom={6}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

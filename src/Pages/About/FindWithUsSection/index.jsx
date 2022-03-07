@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 
 import { useStyles } from "./styles";
-import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
+import SectionsTitle from "../../../Layouts/SectionsTitle";
 import ServiceRow from "./ServiceRow";
 
 import massagetype from "../../../Assets/Images/about-massage.png";
@@ -15,7 +15,7 @@ const FindWithUsSection = () => {
 
   return (
     <Grid item container className={classes.container}>
-      <SectionsTitleWithLink heading="You can find with us" />
+      <SectionsTitle title="Find with us" color="secondary" />
       <Grid item container className={classes.servicesContainer}>
         <ServiceRow
           image={massagetype}
