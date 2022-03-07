@@ -4,8 +4,9 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import { useStyles } from "./styles";
-import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
+import SectionsTitle from "../../../Layouts/SectionsTitle";
 import ImageContainer from "./ImageContainer";
+
 import gallary1 from "../../../Assets/Images/about-gallary.png";
 
 const GallerySection = () => {
@@ -31,7 +32,7 @@ const GallerySection = () => {
 
   return (
     <Grid item container className={classes.container}>
-      <SectionsTitleWithLink heading="Have a look to our spa" />
+      <SectionsTitle color="secondary" title="Have a look" />
       <ImageContainer
         image={gallary1}
         title="Deep full body massage"

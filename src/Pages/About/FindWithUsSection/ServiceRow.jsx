@@ -9,10 +9,10 @@ const ServiceRow = ({ image, title, describtion, link, direction }) => {
     <Grid item container className={classes.container}>
       <Grid item component="img" src={image} alt={title} md={4} />
       <Grid item container className={classes.textContainer} md={7}>
-        <Grid item component="h2">
+        <Grid item component="h2" className={classes.title}>
           {title}
         </Grid>
-        <Grid item component="p">
+        <Grid item component="p" className={classes.paraghraph}>
           {describtion}
         </Grid>
         {link ? (

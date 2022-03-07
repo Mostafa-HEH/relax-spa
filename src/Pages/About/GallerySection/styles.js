@@ -3,8 +3,9 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) => ({
   container: {
     "&.MuiGrid-root": {
-      gap: theme.spacing(2),
+      gap: theme.spacing(4),
       position: "relative",
+      padding: `${theme.spacing(10)} 0`,
     },
   },
 
@@ -18,16 +19,19 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   icon: {
-    backgroundColor: theme.palette.common.white,
-    borderRadius: "100%",
-    width: "30px",
-    height: "30px",
-    cursor: "pointer",
-    padding: "4px",
-    transform: "scale(1.4)",
+    "&.MuiSvgIcon-root": {
+      backgroundColor: theme.palette.secondary.main,
+      borderRadius: "100%",
+      width: "24px",
+      height: "24px",
+      cursor: "pointer",
+      padding: "4px",
+      transform: "scale(1.4)",
+      transition: "all 0.1s ease-in",
 
-    "&:hover": {
-      transform: "scale(1.3)",
+      "&:hover": {
+        transform: "scale(1.3)",
+      },
     },
   },
 }));
