@@ -6,29 +6,38 @@ import { useStyles } from "./styles";
 import PageNavegate from "../../../Layouts/PageNavegate";
 import WorkTime from "./WorkTime";
 
-import greenImg from "../../../Assets/Images/hero-section-png.png";
+import greenImg from "../../../Assets/Images/home-herosection.png";
 
 const HeroSection = () => {
   const classes = useStyles();
 
   return (
     <Grid item container className={classes.container}>
-      <Grid item className={classes.gridItem}>
-        <Typography component="h2" className={classes.maintitle}>
-          Make the stress of daily life skip away, Make it a great day
-        </Typography>
+      <Grid item container className={classes.slideContainer}>
+        <Grid item className={classes.subContainerBackground} />
+        <Box
+          component="img"
+          src={greenImg}
+          alt="relax spa"
+          className={classes.image}
+        />
+        <Grid item>
+          <Typography component="h2" className={classes.maintitle}>
+            Make the stress of daily life skip away, Make it a great day
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography component="p" className={classes.subtitle}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
+            tempor urna. Integer finibus faucibus nibh et euismod.
+          </Typography>
+        </Grid>
+        <Grid item>
+          <PageNavegate name="View our services" link="/services" />
+        </Grid>
       </Grid>
-      <Grid item className={classes.gridItem}>
-        <Typography component="p" className={classes.subtitle}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
-          tempor urna. Integer finibus faucibus nibh et euismod.
-        </Typography>
-      </Grid>
-      <Grid item className={classes.gridItem}>
-        <PageNavegate name="View our services" link="/services" />
-      </Grid>
-      <Box component="img" src={greenImg} className={classes.image} />
       <WorkTime />
+      <Grid item className={classes.containerBackground} />
     </Grid>
   );
 };

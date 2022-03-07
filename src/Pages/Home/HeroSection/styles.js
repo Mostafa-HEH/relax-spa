@@ -3,23 +3,42 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) => ({
   container: {
     "&.MuiGrid-root": {
+      height: `calc(100vh - ${theme.mixins.toolbar.minHeight}px)`,
+      width: "100%",
+      alignItems: "center",
+      justifyContent: "center",
       position: "relative",
-      gap: theme.spacing(4),
-      padding: theme.spacing(6),
+    },
+  },
+
+  slideContainer: {
+    "&.MuiGrid-root": {
       flexDirection: "column",
-      backgroundColor: "#f4fff8",
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6),
-      marginLeft: "auto",
-      marginRight: "auto",
-      borderRadius: theme.shape.borderRadius,
-      maxWidth: "1100px",
-      boxShadow: theme.shadows[2],
+      justifyContent: "center",
+      alignItems: "flex-start",
+      position: "relative",
+      top: "-32px",
+      height: "70%",
+      width: "90%",
+      boxShadow: theme.shadows[1],
+      paddingLeft: theme.spacing(8),
+      paddingRight: theme.spacing(8),
+      backgroundColor: "#ffffff69",
+      overflow: "hidden",
+      gap: theme.spacing(4),
+
+      [theme.breakpoints.down("md")]: {
+        paddingLeft: theme.spacing(4),
+        paddingRight: theme.spacing(4),
+      },
 
       [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(2),
+        textAlign: "center",
         alignItems: "center",
-        paddingBottom: theme.spacing(8),
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(2),
+        height: "100%",
+        width: "100%",
       },
     },
   },
@@ -27,46 +46,57 @@ export const useStyles = makeStyles((theme) => ({
   maintitle: {
     "&.MuiTypography-root": {
       fontSize: "3rem",
-      maxWidth: "590px",
+      fontWeight: "100",
+      maxWidth: "791px",
       lineHeight: "50px",
-      fontWeight: "700",
-      fontFamily: "Playfair Display",
 
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: "2.5rem",
-        textAlign: "center",
       },
     },
   },
 
   subtitle: {
     "&.MuiTypography-root": {
+      lineHeight: "28px",
       fontSize: "1.2rem",
-      fontWeight: "400",
-      maxWidth: "489px",
-      lineHeight: "23px",
-      color: theme.palette.grey[600],
+      maxWidth: "450px",
+    },
+  },
 
-      [theme.breakpoints.down("sm")]: {
-        textAlign: "center",
-      },
+  containerBackground: {
+    "&.MuiGrid-root": {
+      background: "#0192670d",
+      position: "absolute",
+      bottom: "0",
+      left: "0",
+      width: "100%",
+      height: "100%",
+      zIndex: "-4",
+    },
+  },
+
+  subContainerBackground: {
+    "&.MuiGrid-root": {
+      position: "absolute",
+      top: "0",
+      left: "0",
+      width: "100%",
+      height: "100%",
+      backgroundColor: theme.palette.primary.main,
+      filter: "blur(100px)",
+      zIndex: "-2",
     },
   },
 
   image: {
-    position: "absolute",
-    bottom: "0",
     right: "0",
-    height: "100%",
-
-    [theme.breakpoints.down("md")]: {
-      opacity: "0.2",
-    },
-  },
-
-  gridItem: {
-    "&.MuiGrid-item": {
-      zIndex: "1",
+    bottom: "0",
+    position: "absolute",
+    transform: "scale(-1, 1)",
+    zIndex: "-1",
+    [theme.breakpoints.down("sm")]: {
+      right: "-100px",
     },
   },
 }));

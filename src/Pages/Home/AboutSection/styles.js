@@ -3,19 +3,18 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) => ({
   container: {
     "&.MuiGrid-root": {
-      gap: theme.spacing(4),
+      gap: theme.spacing(6),
+      justifyContent: "center",
+      backgroundColor: "#ffd3650d",
+      padding: `${theme.spacing(10)} 0`,
     },
   },
 
   description: {
     "&.MuiTypography-root": {
-      maxWidth: "50%",
+      maxWidth: "700px",
       textAlign: "center",
-      margin: "auto",
-
-      [theme.breakpoints.down("sm")]: {
-        maxWidth: "90%",
-      },
+      padding: `0 ${theme.spacing(2)}`,
     },
   },
 
@@ -34,10 +33,10 @@ export const useStyles = makeStyles((theme) => ({
 
   departmentsTitle: {
     "&.MuiTypography-root": {
+      color: theme.palette.common.black,
+      fontSize: "1.2rem",
       textAlign: "center",
-      fontSize: "1rem",
-      fontWeight: "700",
-      color: "#707070",
+      fontWeight: "400",
     },
   },
 }));

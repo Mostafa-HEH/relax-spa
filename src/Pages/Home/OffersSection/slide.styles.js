@@ -11,9 +11,20 @@ export const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       gap: theme.spacing(4),
       position: "relative",
+
       [theme.breakpoints.down("sm")]: {
         paddingLeft: theme.spacing(2),
         paddingRight: theme.spacing(2),
+      },
+
+      "&::after": {
+        content: `""`,
+        backgroundColor: "#00000054",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        position: "absolute",
       },
     },
   },
@@ -29,9 +40,10 @@ export const useStyles = makeStyles((theme) => ({
   title: {
     "&.MuiTypography-root": {
       fontSize: "3rem",
-      fontWeight: "500",
+      fontWeight: "200",
       [theme.breakpoints.down("sm")]: {
-        fontSize: "2rem",
+        maxWidth: "300px",
+        lineHeight: "46px",
         textAlign: "center",
       },
     },
@@ -40,8 +52,11 @@ export const useStyles = makeStyles((theme) => ({
   subtitle: {
     "&.MuiTypography-root": {
       fontSize: "1.5rem",
+      fontWeight: "200",
       [theme.breakpoints.down("sm")]: {
-        fontSize: "1rem",
+        maxWidth: "200px",
+        textAlign: "center",
+        lineHeight: "30px",
       },
     },
   },
@@ -50,5 +65,10 @@ export const useStyles = makeStyles((theme) => ({
     "&.MuiTypography-root": {
       fontSize: "2rem",
     },
+  },
+
+  items: {
+    position: "relative",
+    zIndex: "1",
   },
 }));

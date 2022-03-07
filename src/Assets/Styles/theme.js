@@ -34,6 +34,20 @@ export const theme = createTheme({
         }),
       },
     },
+
+    MuiFilledInput: {
+      styleOverrides: {
+        root: sx({
+          backgroundColor: "#0192670d",
+          "&:hover": {
+            backgroundColor: "#0192670d",
+          },
+        }),
+        focused: sx({
+          backgroundColor: "#0192670d",
+        }),
+      },
+    },
   },
 
   shape: {

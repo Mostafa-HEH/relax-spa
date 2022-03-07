@@ -10,22 +10,22 @@ const Slide = ({ image, title, subtitle, step }) => {
 
   return (
     <Grid item container className={classes.container}>
-      <Grid item>
+      <Grid item className={classes.items}>
         <Typography component="h2" className={classes.title}>
           {title}
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid item className={classes.items}>
         <Typography component="h3" className={classes.subtitle}>
           {subtitle}
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid item className={classes.items}>
         <Button variant="contained" component={Link} to="/reservation">
           Make an appointment
         </Button>
       </Grid>
-      <Grid item className={classes.stepContainer}>
+      <Grid item className={`${classes.stepContainer} ${classes.items}`}>
         <Typography component="p" className={classes.currentStep}>
           {step.currentStep}
         </Typography>

@@ -8,14 +8,14 @@ const SectionsTitleWithLink = ({ heading, linkName, link }) => {
   const classes = useStyles();
 
   return (
-    <Grid item container className={classes.headContainer}>
-      <Grid item xs={12} sm={4}></Grid>
-      <Grid item xs={12} sm={4}>
+    <Grid item container className={classes.container}>
+      <Grid item></Grid>
+      <Grid item>
         <Typography component="h3" className={classes.heading}>
           {heading}
         </Typography>
       </Grid>
-      <Grid item xs={12} sm={4} className={classes.aboutLink}>
+      <Grid item className={classes.aboutLink}>
         {link ? <PageNavegate name={linkName} link={link} /> : null}
       </Grid>
     </Grid>
