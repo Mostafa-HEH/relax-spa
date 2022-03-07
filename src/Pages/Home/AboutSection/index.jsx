@@ -2,7 +2,8 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import { useStyles } from "./styles";
-import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
+import SectionsTitle from "../../../Layouts/SectionsTitle";
+import SectionsLinks from "../../../Layouts/SectionsLinks";
 import DepartmentsCard from "./DepartmentsCard";
 
 import differentTypesOfMassage from "../../../Assets/Images/about-massage.png";
@@ -15,11 +16,8 @@ const AboutSection = () => {
 
   return (
     <Grid item container className={classes.container}>
-      <SectionsTitleWithLink
-        heading="About us"
-        linkName="More about us"
-        link="/about"
-      />
+      <SectionsTitle color="secondary" title="About us" />
+      <SectionsLinks color="secondary" linkTitle="More about us" to="/about" />
       <Grid item>
         <Typography component="p" className={classes.description}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
@@ -31,7 +29,7 @@ const AboutSection = () => {
       <Grid item container className={classes.departmentsContainer}>
         <Grid item xs={12}>
           <Typography component="h4" className={classes.departmentsTitle}>
-            We provide
+            We provides for you ...
           </Typography>
         </Grid>
         <Grid item container className={classes.departments}>

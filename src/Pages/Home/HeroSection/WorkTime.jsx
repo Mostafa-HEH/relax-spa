@@ -9,7 +9,9 @@ const WorkTime = () => {
   return (
     <Box className={classes.container}>
       <AccessAlarmIcon className={classes.icon} />
-      we are open everyday 8:00am - 8:00pm
+      <Box component="span" className={classes.textTime}>
+        we are open everyday 8:00am - 8:00pm
+      </Box>
     </Box>
   );
 };

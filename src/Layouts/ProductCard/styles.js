@@ -13,6 +13,14 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
 
+  contentContainer: {
+    "&.MuiCardContent-root": {
+      display: "flex",
+      flexDirection: "column",
+      gap: theme.spacing(2),
+    },
+  },
+
   titlePrice: {
     display: "flex",
     flexDirection: "row",
@@ -20,23 +28,27 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
 
-  productName: {
+  name: {
     "&.MuiTypography-root": {
       fontSize: "1.2rem",
-      fontWeight: "800",
+      fontWeight: "600",
     },
   },
 
   price: {
     "&.MuiTypography-root": {
-      fontWeight: "800",
-      color: theme.palette.common.green,
+      fontWeight: "300",
+      color: theme.palette.primary.main,
     },
   },
 
+  priceDgt: {
+    fontSize: "1.5rem",
+  },
+
   duration: {
-    "&.MuiTypography-root": {
-      fontWeight: "700",
+    "&.MuiChip-root": {
+      width: "fit-content",
     },
   },
 }));

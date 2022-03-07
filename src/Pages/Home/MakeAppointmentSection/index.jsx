@@ -6,10 +6,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
 import { useStyles } from "./styles";
-import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
+import SectionsTitle from "../../../Layouts/SectionsTitle";
 
 const MakeAppointmentSection = () => {
   const classes = useStyles();
@@ -30,7 +31,8 @@ const MakeAppointmentSection = () => {
 
   return (
     <Grid item container className={classes.container}>
-      <SectionsTitleWithLink heading="Make an appointment now" />
+      <Box className={classes.bg} />
+      <SectionsTitle color="secondary" title="Make appointment" />
       <Grid
         item
         container

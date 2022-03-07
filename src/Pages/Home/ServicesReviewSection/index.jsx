@@ -2,7 +2,8 @@ import Grid from "@mui/material/Grid";
 
 import { useStyles } from "./styles";
 import ServiceCard from "../../../Layouts/ProductCard";
-import SectionsTitleWithLink from "../../../Layouts/SectionsTitleWithLink";
+import SectionsTitle from "../../../Layouts/SectionsTitle";
+import SectionsLinks from "../../../Layouts/SectionsLinks";
 
 import serviceOne from "../../../Assets/Images/more-related-products.png";
 
@@ -50,10 +51,11 @@ const ServicesReviewSection = () => {
 
   return (
     <Grid item container className={classes.container}>
-      <SectionsTitleWithLink
-        heading="Most populer treatments"
-        linkName="See more"
-        link="/services"
+      <SectionsTitle color="secondary" title="Most populer" />
+      <SectionsLinks
+        color="secondary"
+        to="/services"
+        linkTitle="More about us"
       />
       <Grid item container className={classes.cardsContainer}>
         {products.map(({ id, name, price, duration, description, images }) => (

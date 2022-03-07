@@ -8,15 +8,13 @@ const DepartmentsCard = ({ name, imageSrc }) => {
 
   return (
     <Box className={classes.container}>
+      <Box
+        sx={{ background: `url(${imageSrc})no-repeat center center/ cover` }}
+        className={classes.image}
+      />
       <Typography component="h2" className={classes.title}>
         {name}
       </Typography>
-      <Box
-        component="img"
-        src={imageSrc}
-        alt={name}
-        className={classes.image}
-      />
     </Box>
   );
 };
