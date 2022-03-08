@@ -5,6 +5,8 @@ export const useStyles = makeStyles((theme) => ({
     "&.MuiGrid-root": {
       fontSize: "4rem",
       fontWeight: "100",
+      textAlign: "center",
+      lineHeight: "65px",
     },
   },
 }));

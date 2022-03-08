@@ -17,6 +17,7 @@ export const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       boxShadow: theme.shadows[2],
       backgroundColor: theme.palette.common.white,
+      border: `2px solid ${theme.palette.secondary.main}`,
 
       [theme.breakpoints.down("sm")]: {
         padding: `${theme.spacing(8)} ${theme.spacing(2)}`,
