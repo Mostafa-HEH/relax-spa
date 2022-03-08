@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useParams } from "react-router-dom";
 
 import { useStyles } from "./styles";
@@ -11,7 +13,8 @@ import HowItRuns from "./HowItRun";
 import Review from "./Review";
 
 const ProductDetails = (props) => {
-  const [tab, setTab] = useState("product-details");
+  const [alignment, setAlignment] = useState("product-details");
+  const [img, setImg] = useState(0);
   const { productId } = useParams(props);
 
   const products = [
@@ -125,6 +128,10 @@ const ProductDetails = (props) => {
     },
   ];
 
+  const handleTabChange = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
+
   const [product] = products.filter((product) => {
     return productId === `${product.name?.toLowerCase().split(" ").join("-")}`;
   });
@@ -132,7 +139,7 @@ const ProductDetails = (props) => {
   const classes = useStyles();
 
   const renderHelper = (tab) => {
-    switch (tab) {
+    switch (alignment) {
       case "product-details":
         return <Details product={product} />;
       case "how-to-run":
@@ -149,49 +156,40 @@ const ProductDetails = (props) => {
       <Grid item container md={6} className={classes.imageContainer}>
         <Box
           component="img"
-          src={product.images[0]}
+          src={product.images[img]}
           className={classes.image}
         />
+        <Box className={classes.boxes}>
+          {product.images.map((img, id) => (
+            <Box component="span" key={id} onClick={() => setImg(id)}></Box>
+          ))}
+        </Box>
       </Grid>
       <Grid item container md={6} className={classes.detailsContainer}>
-        <Grid item container className={classes.tabs}>
-          <Grid
-            item
-            className={classes.tab}
-            sx={{ opacity: tab === "product-details" ? "1" : "0.4" }}
-            onClick={() => setTab("product-details")}
+        <Grid item xs={12} className={classes.tabs}>
+          <ToggleButtonGroup
+            color="secondary"
+            value={alignment}
+            exclusive
+            onChange={handleTabChange}
           >
-            Product details
-          </Grid>
-          <Grid
-            item
-            className={classes.tab}
-            sx={{ opacity: tab === "how-to-run" ? "1" : "0.4" }}
-            onClick={() => setTab("how-to-run")}
-          >
-            How it run
-          </Grid>
-          <Grid
-            item
-            className={classes.tab}
-            sx={{ opacity: tab === "review" ? "1" : "0.4" }}
-            onClick={() => setTab("review")}
-          >
-            Review
-          </Grid>
+            <ToggleButton value="product-details">Product details</ToggleButton>
+            <ToggleButton value="how-to-run">How it run</ToggleButton>
+            <ToggleButton value="review">Review</ToggleButton>
+          </ToggleButtonGroup>
         </Grid>
         <Grid item container className={classes.desContainer}>
-          {renderHelper(tab)}
-          <Grid item container className={classes.bookPriceContainer}>
-            <Grid item className={classes.priceContainer}>
-              $
-              <Box component="span" className={classes.price}>
-                {product.price}
-              </Box>
-            </Grid>
-            <Grid item>
-              <Button variant="contained">Book it now</Button>
-            </Grid>
+          {renderHelper(alignment)}
+        </Grid>
+        <Grid item container className={classes.bookPriceContainer}>
+          <Grid item className={classes.priceContainer}>
+            $
+            <Box component="span" className={classes.price}>
+              {product.price}
+            </Box>
+          </Grid>
+          <Grid item>
+            <Button variant="contained">Book it now</Button>
           </Grid>
         </Grid>
       </Grid>

@@ -2,7 +2,10 @@ import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles((theme) => ({
   container: {
-    "&.MuiGrid-root": {},
+    "&.MuiGrid-root": {
+      backgroundColor: "#ffd3650d",
+      justifyContent: "center",
+    },
   },
 
   imageContainer: {
@@ -12,50 +15,25 @@ export const useStyles = makeStyles((theme) => ({
       overflow: "hidden",
       alignItems: "center",
       alignSelf: "center",
+      justifyContent: "center",
 
       [theme.breakpoints.down("md")]: {
-        height: "300px",
+        height: "500px",
       },
     },
   },
 
   image: {
-    position: "absolute",
-    width: "80%",
-    left: "10%",
-    [theme.breakpoints.down("md")]: {
-      width: "100%",
-      left: "0",
-    },
+    width: "fit-content",
+    height: "fit-content",
   },
 
   detailsContainer: {
     "&.MuiGrid-root": {
-      flexDirection: "column",
-      gap: theme.spacing(4),
-      marginTop: theme.spacing(4),
-
-      [theme.breakpoints.down("md")]: {
-        marginLeft: theme.spacing(4),
-        marginRight: theme.spacing(4),
-      },
-    },
-  },
-
-  tabs: {
-    "&.MuiGrid-root": {
-      fontSize: "1rem",
-      fontWeight: "800",
-      gap: "2rem",
-      [theme.breakpoints.down("md")]: {
-        justifyContent: "center",
-      },
-    },
-  },
-
-  tab: {
-    "&.MuiGrid-root": {
-      cursor: "pointer",
+      height: "90vh",
+      alignItems: "flex-start",
+      alignContent: "space-between",
+      maxWidth: "600px",
     },
   },
 
@@ -63,7 +41,7 @@ export const useStyles = makeStyles((theme) => ({
     "&.MuiGrid-root": {
       justifyContent: "space-between",
       alignItems: "center",
-      maxWidth: "90%",
+      marginBottom: theme.spacing(4),
 
       [theme.breakpoints.down("md")]: {
         maxWidth: "unset",
@@ -76,10 +54,34 @@ export const useStyles = makeStyles((theme) => ({
   priceContainer: {
     "&.MuiGrid-root": {
       color: theme.palette.primary.main,
+      fontWeight: "300",
+    },
+  },
+
+  tabs: {
+    "&.MuiGrid-root": {
+      marginTop: theme.spacing(4),
+      display: "flex",
+      justifyContent: "center",
     },
   },
 
   price: {
     fontSize: "3rem",
+  },
+
+  boxes: {
+    position: "absolute",
+    bottom: theme.spacing(4),
+    display: "flex",
+    flexDirection: "row",
+    gap: "1rem",
+
+    "& span": {
+      height: "15px",
+      width: "15px",
+      backgroundColor: theme.palette.secondary.main,
+      cursor: "pointer",
+    },
   },
 }));

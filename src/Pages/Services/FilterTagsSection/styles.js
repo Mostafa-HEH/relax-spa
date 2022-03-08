@@ -7,8 +7,12 @@ export const useStyles = makeStyles((theme) => ({
       height: "3rem",
       maxWidth: "800px",
       alignItems: "center",
-      margin: "auto",
       overflow: "hidden",
+      margin: `${theme.spacing(10)} auto`,
+      [theme.breakpoints.down("sm")]: {
+        marginLeft: theme.spacing(2),
+        marginRight: theme.spacing(2),
+      },
     },
   },
   tagsContainer: {
