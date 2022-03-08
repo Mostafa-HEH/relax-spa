@@ -14,8 +14,8 @@ export const useStyles = makeStyles((theme) => ({
 
   productName: {
     "&.MuiTypography-root": {
-      fontSize: "2rem",
-      fontWeight: "600",
+      fontSize: "2.5rem",
+      fontWeight: "300",
     },
   },
 

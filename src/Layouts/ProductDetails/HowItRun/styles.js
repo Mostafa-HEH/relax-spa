@@ -18,8 +18,8 @@ export const useStyles = makeStyles((theme) => ({
 
   title: {
     "&.MuiGrid-root": {
-      fontSize: "1.2rem",
-      fontWeight: "700",
+      fontSize: "1.5rem",
+      fontWeight: "400",
       [theme.breakpoints.down("md")]: {
         alignSelf: "flex-start",
       },
@@ -29,5 +29,7 @@ export const useStyles = makeStyles((theme) => ({
   list: {
     marginTop: "0",
     marginBottom: "0",
+    listStyleType: "decimal",
+    paddingLeft: "30px",
   },
 }));

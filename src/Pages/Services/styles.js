@@ -3,7 +3,8 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) => ({
   container: {
     "&.MuiGrid-root": {
-      gap: theme.spacing(8),
+      backgroundColor: "#ffd3650d",
+      padding: `${theme.spacing(10)} 0`,
     },
   },
 }));

@@ -4,7 +4,8 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     "&.MuiGrid-root": {
       flexWrap: "nowrap",
-      gap: "1rem",
+      gap: theme.spacing(1),
+      flexDirection: "column",
     },
   },
 
@@ -16,7 +17,7 @@ export const useStyles = makeStyles((theme) => ({
 
   name: {
     "&.MuiGrid-root": {
-      fontWeight: "800",
+      fontWeight: "600",
       fontSize: "1.2rem",
     },
   },
