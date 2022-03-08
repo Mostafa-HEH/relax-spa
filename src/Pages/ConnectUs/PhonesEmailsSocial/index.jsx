@@ -1,4 +1,5 @@
 import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 
 import { useStyles } from "./styles";
 import SocialLinks from "../../../Layouts/SocialLinks";
@@ -13,13 +14,19 @@ const PhonesEmailsSocial = () => {
           Call us at
         </Grid>
         <Grid item className={classes.items}>
-          +20123456789
+          <Link href="tel:0020123456789" color="common.black">
+            +20123456789
+          </Link>
         </Grid>
         <Grid item className={classes.items}>
-          +20121212123
+          <Link href="tel:0020123456789" color="common.black">
+            +20123456789
+          </Link>
         </Grid>
         <Grid item className={classes.items}>
-          +20121111111
+          <Link href="tel:0020123456789" color="common.black">
+            +20123456789
+          </Link>
         </Grid>
       </Grid>
       <Grid item container className={classes.group}>
@@ -27,7 +34,9 @@ const PhonesEmailsSocial = () => {
           Email
         </Grid>
         <Grid item className={classes.items}>
-          example@example.com
+          <Link href="mailto:example@example.com" color="common.black">
+            example@example.com
+          </Link>
         </Grid>
       </Grid>
       <SocialLinks color="#000" />

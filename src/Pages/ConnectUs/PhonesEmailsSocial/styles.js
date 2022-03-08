@@ -5,6 +5,12 @@ export const useStyles = makeStyles((theme) => ({
     "&.MuiGrid-root": {
       gap: theme.spacing(4),
       marginLeft: theme.spacing(4),
+
+      [theme.breakpoints.down("md")]: {
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: 0,
+      },
     },
   },
 
@@ -13,13 +19,27 @@ export const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       fontSize: "1rem",
       fontWeight: "700",
+      [theme.breakpoints.down("md")]: {
+        justifyContent: "center",
+        alignItems: "center",
+      },
+    },
+  },
+
+  items: {
+    "&.MuiGrid-root": {
+      fontWeight: "400",
     },
   },
 
   title: {
     "&.MuiGrid-root": {
       fontSize: "1.2rem",
-      fontWeight: "800",
+      fontWeight: "600",
+      [theme.breakpoints.down("md")]: {
+        justifyContent: "center",
+        alignItems: "center",
+      },
     },
   },
 }));
