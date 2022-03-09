@@ -20,6 +20,10 @@ export const theme = createTheme({
       dark: "#CD9816",
       contrastText: "#000",
     },
+
+    background: {
+      default: "#ffd3650d",
+    },
   },
 
   typography: {
