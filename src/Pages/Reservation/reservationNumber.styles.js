@@ -12,14 +12,14 @@ export const useStyles = makeStyles((theme) => ({
   title: {
     "&.MuiGrid-root": {
       fontSize: "2.5rem",
-      fontWeight: "700",
+      fontWeight: "300",
     },
   },
 
   subtitle: {
     "&.MuiGrid-root": {
       textAlign: "center",
-      fontWeight: "800",
+      fontWeight: "300",
     },
   },
 }));

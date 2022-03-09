@@ -20,7 +20,7 @@ export const useStyles = makeStyles((theme) => ({
   title: {
     "&.MuiGrid-root": {
       fontSize: "2.5rem",
-      fontWeight: "800",
+      fontWeight: "300",
     },
   },
 
