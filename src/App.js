@@ -8,11 +8,13 @@ import ConnectUs from "./Pages/ConnectUs";
 import Reservation from "./Pages/Reservation";
 import ProductDetails from "./Layouts/ProductDetails";
 import Footer from "./Layouts/Footer";
+import PopupSubscription from "./Layouts/PopupSubscription";
 
 function App() {
   return (
     <>
       <Navbar />
+      <PopupSubscription />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
