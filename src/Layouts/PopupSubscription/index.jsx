@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
@@ -9,7 +9,7 @@ import { useFormik } from "formik";
 import { useStyles } from "./styles";
 
 const PopupSubscription = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const classes = useStyles({ show });
 
   const formik = useFormik({
@@ -22,9 +22,32 @@ const PopupSubscription = () => {
     },
   });
 
+  useEffect(() => {
+    switch (sessionStorage.getItem("new_client_off")) {
+      case null:
+        setShow(true);
+        break;
+      case false:
+        setShow(false);
+        break;
+
+      default:
+        setShow(false);
+        break;
+    }
+  }, []);
+
+  console.log(sessionStorage.getItem("new_client_off"));
+
   return (
     <Grid container className={classes.container} show={show.toString()}>
-      <CloseIcon className={classes.closeIcon} onClick={() => setShow(false)} />
+      <CloseIcon
+        className={classes.closeIcon}
+        onClick={() => {
+          setShow(false);
+          sessionStorage.setItem("new_client_off", false);
+        }}
+      />
       <Grid item className={classes.title}>
         New client offer $20 off*
       </Grid>
