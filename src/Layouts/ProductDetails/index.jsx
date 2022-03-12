@@ -7,133 +7,22 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useParams } from "react-router-dom";
 
 import { useStyles } from "./styles";
-import serviceOne from "../../Assets/Images/fullproduct-slide.png";
 import Details from "./Details";
 import HowItRuns from "./HowItRun";
 import Review from "./Review";
+import { servicesProducts } from "../../Services/Utils/fakeData";
 
 const ProductDetails = (props) => {
   const [alignment, setAlignment] = useState("product-details");
   const [img, setImg] = useState(0);
   const { productId } = useParams(props);
 
-  const products = [
-    {
-      id: 1,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 2,
-      name: "Deep back nick",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 3,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 4,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 5,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 6,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 7,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 8,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 9,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 10,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 11,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-    {
-      id: 12,
-      name: "Deep full body",
-      price: "45",
-      duration: "60 Minute",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque uttempor urna. Integer finibus faucibus nibh et euismod.",
-      images: [serviceOne, serviceOne, serviceOne, serviceOne, serviceOne],
-    },
-  ];
-
   const handleTabChange = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
 
-  const [product] = products.filter((product) => {
-    return productId === `${product.name?.toLowerCase().split(" ").join("-")}`;
+  const [product] = servicesProducts?.filter((product) => {
+    return productId === `${product.title?.toLowerCase().split(" ").join("-")}`;
   });
 
   const classes = useStyles();
@@ -143,9 +32,9 @@ const ProductDetails = (props) => {
       case "product-details":
         return <Details product={product} />;
       case "how-to-run":
-        return <HowItRuns />;
+        return <HowItRuns product={product} />;
       case "review":
-        return <Review />;
+        return <Review product={product} />;
       default:
         <div>Something wrong</div>;
     }
@@ -159,11 +48,17 @@ const ProductDetails = (props) => {
           src={product.images[img]}
           className={classes.image}
         />
-        <Box className={classes.boxes}>
+        <Grid item container className={classes.boxes}>
           {product.images.map((img, id) => (
-            <Box component="span" key={id} onClick={() => setImg(id)}></Box>
+            <Grid
+              item
+              key={id}
+              onClick={() => setImg(id)}
+              sx={{ background: `url(${img})no-repeat center center/cover` }}
+              className={classes.boxImg}
+            ></Grid>
           ))}
-        </Box>
+        </Grid>
       </Grid>
       <Grid item container md={6} className={classes.detailsContainer}>
         <Grid item xs={12} className={classes.tabs}>

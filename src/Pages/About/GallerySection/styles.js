@@ -9,6 +9,26 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
 
+  imageContainer: {
+    "&.MuiGrid-root": {
+      height: "85vh",
+      width: "100%",
+      justifyContent: "center",
+      position: "relative",
+
+      "&::before": {
+        backgroundColor: theme.palette.common.black,
+        content: `""`,
+        position: "absolute",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        zIndex: "-1",
+      },
+    },
+  },
+
   arrows: {
     "&.MuiGrid-root": {
       position: "absolute",
@@ -33,5 +53,41 @@ export const useStyles = makeStyles((theme) => ({
         transform: "scale(1.3)",
       },
     },
+  },
+
+  textContainer: {
+    "&.MuiGrid-root": {
+      textAlign: "center",
+      padding: `${theme.spacing(1)} ${theme.spacing(4)}`,
+      backgroundColor: "#ffd365a6",
+      position: "absolute",
+      bottom: "0",
+      left: "0",
+      right: "0",
+    },
+  },
+
+  title: {
+    "&.MuiGrid-root": {
+      fontSize: "1.6rem",
+      fontWeight: "300",
+    },
+  },
+
+  description: {
+    "&.MuiGrid-root": {
+      fontSize: "1rem",
+    },
+  },
+
+  step: {
+    "&.MuiGrid-root": {
+      fontSize: "1.5rem",
+      fontWeight: "300",
+    },
+  },
+
+  currentStep: {
+    fontSize: "2rem",
   },
 }));

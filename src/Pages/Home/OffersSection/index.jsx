@@ -6,6 +6,7 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import { useStyles } from "./styles";
 import Slide from "./Slide";
 import slideOnePhoto from "../../../Assets/Images/home-special-offer.png";
+import slideTwoPhoto from '../../../Assets/Images/huum-xn_MghoT9HE-unsplash.jpg';
 
 const slides = [
   {
@@ -16,21 +17,9 @@ const slides = [
   },
   {
     id: 2,
-    image: slideOnePhoto,
-    title: "Special offer for you today",
-    subtitle: "90% free 30 minute massage",
-  },
-  {
-    id: 3,
-    image: slideOnePhoto,
-    title: "Special offer for you today",
-    subtitle: "85% free 60 minute massage",
-  },
-  {
-    id: 4,
-    image: slideOnePhoto,
-    title: "Special offer for you today",
-    subtitle: "80% free 60 minute massage",
+    image: slideTwoPhoto,
+    title: "Three days start from 10/3/2022",
+    subtitle: "Book and get free Sauna, Steam, Jacuzi ",
   },
 ];
 
