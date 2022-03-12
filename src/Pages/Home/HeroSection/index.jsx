@@ -23,13 +23,13 @@ const HeroSection = () => {
         />
         <Grid item>
           <Typography component="h2" className={classes.maintitle}>
-            Make the stress of daily life skip away, Make it a great day
+            Enjoy spa treatment and relaxation
           </Typography>
         </Grid>
         <Grid item>
           <Typography component="p" className={classes.subtitle}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
-            tempor urna. Integer finibus faucibus nibh et euismod.
+            Feeling the effect of relaxing procedures, feeling how the body
+            rests and is filled with life energy - is this not a dream?
           </Typography>
         </Grid>
         <Grid item>

@@ -62,6 +62,8 @@ const SendMassage = () => {
               variant="filled"
               type="text"
               name="massage"
+              multiline
+              rows={4}
               value={formik.values.massage}
               onChange={formik.handleChange}
             />

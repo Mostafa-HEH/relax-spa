@@ -11,12 +11,7 @@ import Chip from "@mui/material/Chip";
 
 import { useStyles } from "./massageSlide.styles";
 import Buttons from "./Buttons";
-
-const massageTypes = [
-  { id: 1, name: "Deep full body" },
-  { id: 2, name: "Deep back nick" },
-  { id: 3, name: "Full back" },
-];
+import { servicesProducts } from "../../Services/Utils/fakeData";
 
 const MassageSlide = ({ step, handleNext, handleBack }) => {
   const classes = useStyles();
@@ -95,7 +90,7 @@ const MassageSlide = ({ step, handleNext, handleBack }) => {
         <FormControl variant="filled" fullWidth>
           <Autocomplete
             multiple
-            options={massageTypes.map((option) => option.name)}
+            options={servicesProducts.map((option) => option.title)}
             renderTags={(value, getTagProps) =>
               value.map((option, index) => (
                 <Chip

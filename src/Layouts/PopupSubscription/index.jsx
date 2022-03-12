@@ -23,7 +23,7 @@ const PopupSubscription = () => {
   });
 
   return (
-    <Grid container className={classes.container} show={show}>
+    <Grid container className={classes.container} show={show.toString()}>
       <CloseIcon className={classes.closeIcon} onClick={() => setShow(false)} />
       <Grid item className={classes.title}>
         New client offer $20 off*

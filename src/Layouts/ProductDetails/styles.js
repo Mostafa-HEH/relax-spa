@@ -3,8 +3,8 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) => ({
   container: {
     "&.MuiGrid-root": {
-      backgroundColor: "#ffd3650d",
       justifyContent: "center",
+      gap: theme.spacing(4),
     },
   },
 
@@ -16,6 +16,7 @@ export const useStyles = makeStyles((theme) => ({
       alignItems: "center",
       alignSelf: "center",
       justifyContent: "center",
+      backgroundColor: "#000",
 
       [theme.breakpoints.down("md")]: {
         height: "500px",
@@ -71,16 +72,18 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   boxes: {
-    position: "absolute",
-    bottom: theme.spacing(4),
-    display: "flex",
-    flexDirection: "row",
-    gap: "1rem",
+    "&.MuiGrid-root": {
+      position: "absolute",
+      bottom: 0,
+      justifyContent: "center",
+      flexWrap: "nowrap",
+    },
+  },
 
-    "& span": {
-      height: "15px",
-      width: "15px",
-      backgroundColor: theme.palette.secondary.main,
+  boxImg: {
+    "&.MuiGrid-root": {
+      height: theme.spacing(8),
+      width: theme.spacing(16),
       cursor: "pointer",
     },
   },

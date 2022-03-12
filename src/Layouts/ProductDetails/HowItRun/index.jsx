@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 
 import { useStyles } from "./styles";
 
-const HowItRun = () => {
+const HowItRun = ({ product }) => {
   const classes = useStyles();
 
   return (
@@ -13,24 +13,11 @@ const HowItRun = () => {
           How the program runs
         </Grid>
         <Box component="ul" className={classes.list}>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
+          {product.howItRun.map((step, id) => (
+            <Box component="li" key={id}>
+              {step}.
+            </Box>
+          ))}
         </Box>
       </Grid>
       <Grid item container className={classes.listContainer}>
@@ -38,24 +25,11 @@ const HowItRun = () => {
           How this program helps you
         </Grid>
         <Box component="ul" className={classes.list}>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
-          <Box component="li">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Box>
+          {product.howThisProgramHelpsYou.map((penfet, id) => (
+            <Box component="li" key={id}>
+              {penfet}.
+            </Box>
+          ))}
         </Box>
       </Grid>
     </Grid>

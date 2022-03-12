@@ -10,7 +10,7 @@ const Details = ({ product }) => {
     <Grid item container className={classes.desContainer}>
       <Grid item>
         <Typography component="h2" className={classes.productName}>
-          {product.name}
+          {product.title}
         </Typography>
       </Grid>
       <Grid item>
@@ -28,13 +28,13 @@ const Details = ({ product }) => {
         <Grid item container className={classes.feedbackItems}>
           <Grid item>Did this</Grid>
           <Grid item className={classes.feedbackItemsInfo}>
-            30 Person
+            {product.doThis} Person
           </Grid>
         </Grid>
         <Grid item container className={classes.feedbackItems}>
           <Grid item>Like this</Grid>
           <Grid item className={classes.feedbackItemsInfo}>
-            95%
+            {product.likeThis}%
           </Grid>
         </Grid>
       </Grid>
