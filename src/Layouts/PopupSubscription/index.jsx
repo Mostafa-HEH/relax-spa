@@ -37,8 +37,6 @@ const PopupSubscription = () => {
     }
   }, []);
 
-  console.log(sessionStorage.getItem("new_client_off"));
-
   return (
     <Grid container className={classes.container} show={show.toString()}>
       <CloseIcon

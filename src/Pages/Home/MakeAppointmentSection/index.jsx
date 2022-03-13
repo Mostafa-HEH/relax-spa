@@ -1,5 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -8,12 +9,15 @@ import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import { connect } from "react-redux";
 
 import { useStyles } from "./styles";
 import SectionsTitle from "../../../Layouts/SectionsTitle";
+import { homePageBookData } from "../../../Services/Actions";
 
-const MakeAppointmentSection = () => {
+const MakeAppointmentSection = (props) => {
   const classes = useStyles();
+  let navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -25,7 +29,8 @@ const MakeAppointmentSection = () => {
       numberofperson: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      props.homePageBookData(values);
+      navigate("/reservation");
     },
   });
 
@@ -138,4 +143,6 @@ const MakeAppointmentSection = () => {
   );
 };
 
-export default MakeAppointmentSection;
+export default connect(null, {
+  homePageBookData,
+})(MakeAppointmentSection);
