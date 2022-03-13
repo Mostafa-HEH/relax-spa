@@ -4,7 +4,6 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     "&.MuiGrid-root": {
       gap: theme.spacing(4),
-      backgroundColor: "#ffd3650d",
       padding: `${theme.spacing(10)} 0`,
     },
   },

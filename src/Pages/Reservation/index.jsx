@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
+import { connect } from "react-redux";
 
 import { useStyles } from "./styles";
 import StartSlide from "./StartSlide";
@@ -10,11 +11,13 @@ import PersonalSlide from "./PersonalSlide";
 import MassageSlide from "./MassageSlide";
 import ReservationNumber from "./ReservationNumber";
 
-const Reservation = () => {
+const Reservation = (props) => {
   const [step, setStep] = useState(0);
   const classes = useStyles();
 
   const steps = ["Personal", "Massage"];
+
+  console.log(props.homePageData, "from reservation");
 
   const handleNext = (data) => {
     setStep((prev) => prev + 1);
@@ -74,4 +77,8 @@ const Reservation = () => {
   );
 };
 
-export default Reservation;
+const mapStateToProps = (state) => {
+  return { homePageData: state.BookData };
+};
+
+export default connect(mapStateToProps)(Reservation);
