@@ -138,7 +138,12 @@ const Navbar = (props) => {
                   </Link>
                 </ListItem>
               </List>
-              <Button variant="contained" component={Link} to="/reservation">
+              <Button
+                variant="contained"
+                component={Link}
+                to="/reservation"
+                onClick={() => setActive("")}
+              >
                 Make an appointment
               </Button>
             </Toolbar>
@@ -196,7 +201,14 @@ const Navbar = (props) => {
                 </Link>
               </ListItem>
             </List>
-            <Button variant="contained">Make an appointment</Button>
+            <Button
+              variant="contained"
+              component={Link}
+              to="/reservation"
+              onClick={() => setActive("")}
+            >
+              Make an appointment
+            </Button>
           </Drawer>
         </AppBar>
       </HideOnScroll>
