@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { useStyles } from "./reservationNumber.styles";
 
-const ReservationNumber = () => {
+const ReservationNumber = ({ reservationNumber }) => {
   const classes = useStyles();
 
   return (
@@ -14,7 +14,7 @@ const ReservationNumber = () => {
       </Grid>
       <Grid item>We are waiting you in Mansoura branch</Grid>
       <Grid item className={classes.subtitle}>
-        your reservation number is 123456789
+        your reservation number is {reservationNumber}
         <br />
         keep it with you when you arrive
       </Grid>

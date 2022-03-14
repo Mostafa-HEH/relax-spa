@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -13,17 +13,44 @@ import ReservationNumber from "./ReservationNumber";
 
 const Reservation = (props) => {
   const [step, setStep] = useState(0);
+  const [lasSlide, setLasSlide] = useState(false);
+  const [reservationData, setReservationData] = useState({
+    location: "",
+    name: "",
+    phonenumber: "",
+    date: "",
+    time: "",
+    numberofperson: "",
+    reservationNumber: 1238520,
+  });
   const classes = useStyles();
 
   const steps = ["Personal", "Massage"];
 
-  console.log(props.homePageData, "from reservation");
+  useEffect(() => {
+    if (props.homePageData) {
+      setReservationData((prev) => ({ ...prev, ...props.homePageData }));
+      setStep(1);
+    }
+    const submitData = () => {
+      console.log(reservationData);
+    };
 
-  const handleNext = (data) => {
+    if (lasSlide) submitData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lasSlide, props.homePageData]);
+
+  const handleNext = (data, lastSlide) => {
+    setReservationData({ ...reservationData, ...data });
     setStep((prev) => prev + 1);
+
+    if (lastSlide) {
+      setLasSlide(true);
+    }
   };
 
   const handleBack = (data) => {
+    setReservationData((prev) => ({ ...prev, ...data }));
     setStep((prev) => prev - 1);
   };
 
@@ -48,17 +75,28 @@ const Reservation = (props) => {
         return <StartSlide setStep={setStep} />;
 
       case 1:
-        return <PersonalSlide step={currentStep} handleNext={handleNext} />;
+        return (
+          <PersonalSlide
+            step={currentStep}
+            handleNext={handleNext}
+            initialData={reservationData}
+          />
+        );
       case 2:
         return (
           <MassageSlide
             step={currentStep}
             handleNext={handleNext}
             handleBack={handleBack}
+            initialData={reservationData}
           />
         );
       case 3:
-        return <ReservationNumber />;
+        return (
+          <ReservationNumber
+            reservationNumber={reservationData.reservationNumber}
+          />
+        );
 
       default:
         return (
