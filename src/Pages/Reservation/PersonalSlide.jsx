@@ -10,20 +10,13 @@ import TextField from "@mui/material/TextField";
 import { useStyles } from "./personalSlide.styles";
 import Buttons from "./Buttons";
 
-const PersonalSlide = ({ step, handleNext }) => {
+const PersonalSlide = ({ step, handleNext, initialData }) => {
   const classes = useStyles();
 
   const formik = useFormik({
-    initialValues: {
-      location: "",
-      name: "",
-      phonenumber: "",
-      date: "",
-      time: "",
-      numberofperson: "",
-    },
+    initialValues: initialData,
     onSubmit: (values) => {
-      handleNext(values);
+      handleNext(values, false);
     },
   });
 
