@@ -1,41 +1,30 @@
+// GallerySection components contains:
+//  1) GallerySection render.
+//
+// In this component you found ( mui)
+//
+//  uses ( <GallerySection/>)
+
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-import { useStyles } from "./styles";
 import SectionsTitle from "../../../Layouts/SectionsTitle";
 
-import gallary1 from "../../../Assets/Images/about-gallary.png";
-import gallary2 from "../../../Assets/Images/jared-rice-PibraWHb4h8-unsplash.jpg";
-import gallary3 from "../../../Assets/Images/li-yang-a8iCZvtrHpQ-unsplash.jpg";
+import { gallaryImages } from "../../../Services/Constants/about-gallary";
 
-const gallaryImages = [
-  {
-    id: 1,
-    image: gallary1,
-    title: "Massage room",
-    description: "Our massier with oil",
-  },
-  {
-    id: 2,
-    image: gallary2,
-    title: "Shower room",
-    description: "After massage you take a shower in this room",
-  },
-  {
-    id: 3,
-    image: gallary3,
-    title: "Resciption pool",
-    description: "Oul loopy",
-  },
-];
+import { useStyles } from "./styles";
 
 const GallerySection = () => {
+  // image index state
   const [idx, setIdx] = useState(0);
+
+  // GallerySection styles from './styles.js'.
   const classes = useStyles();
 
+  // handle arrows click state
   const handleChangeImg = (action) => {
     if (action === "prev" && idx > 0) {
       setIdx((prev) => prev - 1);
@@ -48,6 +37,7 @@ const GallerySection = () => {
     }
   };
 
+  // get state of image idx and render image data based on image index
   const imageRender = (imageIdx) => {
     let { image, id, title, description } = gallaryImages[imageIdx];
 
@@ -79,7 +69,7 @@ const GallerySection = () => {
     <Grid item container className={classes.container}>
       <SectionsTitle color="secondary" title="Have a look" />
       {imageRender(idx)}
-
+      {/* arrows */}
       <Grid item container className={classes.arrows}>
         <Grid item>
           <ArrowBackIosNewIcon

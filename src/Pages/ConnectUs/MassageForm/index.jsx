@@ -1,3 +1,10 @@
+// SendMassage section component contains:
+//  1) SendMassage section.
+//
+// In this component you found ( Formik, mui)
+//
+//  uses ( <SendMassage/>)
+
 import React from "react";
 import { useFormik } from "formik";
 import Grid from "@mui/material/Grid";
@@ -8,8 +15,10 @@ import Button from "@mui/material/Button";
 import { useStyles } from "./styles";
 
 const SendMassage = () => {
+  // SendMassage styles from './styles.js'.
   const classes = useStyles();
 
+  // Formik form values handle hock
   const formik = useFormik({
     initialValues: {
       name: "",

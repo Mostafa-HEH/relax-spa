@@ -1,11 +1,19 @@
+// Slide section component contains:
+//  1) Slide Section .
+//
+// In this component you found ( mui, react router)
+//
+//  uses ( <Slide  image={image} title={title} subtitle={subtitle}  step={step}/>)
+
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 
 import { useStyles } from "./slide.styles";
 
 const Slide = ({ image, title, subtitle, step }) => {
+  // Slide styles from './styles.js'.
   const classes = useStyles({ image });
 
   return (

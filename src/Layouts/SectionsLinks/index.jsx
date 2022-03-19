@@ -1,10 +1,18 @@
+// SectionsLinks components contains:
+//  1) review slide render.
+//
+// In this component you found (React router ,mui)
+//
+//  uses ( <SectionsLinks linkTitle={link name here} to={link url} color={link color by default econdary main color}/>)
+
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Link } from "react-router-dom";
 
 import { useStyles } from "./styles";
 
 const SectionsLinks = ({ linkTitle, to, color }) => {
+  // SectionsLinks styles from './styles.js'.
   const classes = useStyles({ color });
 
   return (

@@ -1,12 +1,22 @@
+// ServicesReviewSection component contains:
+//  1) ServicesReview Section .
+//
+// In this component you found ( mui)
+//
+//  uses ( <ServicesReviewSection/>)
+
 import Grid from "@mui/material/Grid";
 
-import { useStyles } from "./styles";
 import ServiceCard from "../../../Layouts/ProductCard";
 import SectionsTitle from "../../../Layouts/SectionsTitle";
 import SectionsLinks from "../../../Layouts/SectionsLinks";
+
 import { servicesProducts } from "../../../Services/Utils/fakeData";
 
+import { useStyles } from "./styles";
+
 const ServicesReviewSection = () => {
+  // ServicesReviewSection styles from './styles.js'.
   const classes = useStyles();
 
   return (
@@ -18,6 +28,7 @@ const ServicesReviewSection = () => {
         linkTitle="More about us"
       />
       <Grid item container className={classes.cardsContainer}>
+        {/* Render products */}
         {servicesProducts.map((product, id) => {
           if (id > 3) return null;
           return (

@@ -1,15 +1,23 @@
+// ServiceCard components contains:
+//  1) contins card for product on whole site.
+//
+// In this component you found (react route dom , mui)
+//
+//  uses ( <ServiceCard image="/image link for service" name="setvice name" description="service description" price="service price" duration="session duration"/> )
+
+import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
-import { CardActionArea } from "@mui/material";
-import { Link } from "react-router-dom";
+import CardActionArea from "@mui/material/CardActionArea";
 
 import { useStyles } from "./styles";
 
 const ServiceCard = ({ id, image, name, description, price, duration }) => {
+  // ServiceCard styles from './styles.js'.
   const classes = useStyles();
 
   return (

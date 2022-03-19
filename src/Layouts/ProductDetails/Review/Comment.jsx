@@ -1,3 +1,10 @@
+// Comment components contains:
+//  1) Comment  render.
+//
+// In this component you found ( mui)
+//
+//  uses ( <Comment product={comment object}/>)
+
 import Grid from "@mui/material/Grid";
 import Rating from "@mui/material/Rating";
 

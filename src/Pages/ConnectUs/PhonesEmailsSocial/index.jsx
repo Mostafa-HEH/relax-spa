@@ -1,10 +1,19 @@
+// PhonesEmailsSocial section component contains:
+//  1) PhonesEmailsSocial section.
+//
+// In this component you found ( mui)
+//
+//  uses ( <PhonesEmailsSocial/>)
+
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 
-import { useStyles } from "./styles";
 import SocialLinks from "../../../Layouts/SocialLinks";
 
+import { useStyles } from "./styles";
+
 const PhonesEmailsSocial = () => {
+  // PhonesEmailsSocial styles from './styles.js'.
   const classes = useStyles();
 
   return (

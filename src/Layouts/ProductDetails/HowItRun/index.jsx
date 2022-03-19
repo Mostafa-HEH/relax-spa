@@ -1,9 +1,17 @@
+// Details components contains:
+//  1) how session run render.
+//
+// In this component you found ( mui)
+//
+//  uses ( <HowItRun product={product object}/>)
+
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
 import { useStyles } from "./styles";
 
 const HowItRun = ({ product }) => {
+  // HowItRun styles from './styles.js'.
   const classes = useStyles();
 
   return (

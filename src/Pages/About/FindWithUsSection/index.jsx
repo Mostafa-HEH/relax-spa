@@ -1,8 +1,16 @@
+// FindWithUsSection components contains:
+//  1) FindWithUs Section .
+//
+// In this component you found ( mui)
+//
+//  uses ( <FindWithUsSection/>)
+
 import Grid from "@mui/material/Grid";
 
-import { useStyles } from "./styles";
 import SectionsTitle from "../../../Layouts/SectionsTitle";
 import ServiceRow from "./ServiceRow";
+
+import { useStyles } from "./styles";
 
 import massagetype from "../../../Assets/Images/about-massage.png";
 import sauna from "../../../Assets/Images/about-sauna.png";
@@ -11,6 +19,7 @@ import jacuzzie from "../../../Assets/Images/about-jacuzzie.png";
 import gym from "../../../Assets/Images/about-gym.png";
 
 const FindWithUsSection = () => {
+  // FindWithUsSection styles from './styles.js'.
   const classes = useStyles();
 
   return (

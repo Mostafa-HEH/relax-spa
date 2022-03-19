@@ -1,13 +1,24 @@
+// Services page component contains:
+//  1) Services Section .
+//
+// In this component you found ( mui )
+//
+//  uses                    ( <Services/>)
+// <SearchSection/>  |  <FilterTagsSection/>  |  <Products/>  |  <SeeMoreButton/>
+//                          <Tag/>
+
 import Grid from "@mui/material/Grid";
 
-import { useStyles } from "./styles";
 import SearchSection from "./SearchSection";
 import FilterTagsSection from "./FilterTagsSection";
 import Products from "./Products";
 import SeeMoreButton from "../../Layouts/SeeMoreButton";
 import PagesTitle from "../../Layouts/PagesTitle";
 
+import { useStyles } from "./styles";
+
 const Services = () => {
+  // Services styles from './styles.js'.
   const classes = useStyles();
 
   return (
@@ -17,6 +28,7 @@ const Services = () => {
         <SearchSection />
         <FilterTagsSection />
         <Products />
+        {/* TODO handle see more button */}
         <SeeMoreButton />
       </Grid>
     </>

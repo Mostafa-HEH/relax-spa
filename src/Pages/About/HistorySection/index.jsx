@@ -1,10 +1,19 @@
+// HistorySection component contains:
+//  1) History section.
+//
+// In this component you found ( mui)
+//
+//  uses ( <HistorySection/>)
+
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import { useStyles } from "./styles";
 import SectionsTitle from "../../../Layouts/SectionsTitle";
 
+import { useStyles } from "./styles";
+
 const HistorySection = () => {
+  // HistorySection styles from './styles.js'.
   const classes = useStyles();
 
   return (
