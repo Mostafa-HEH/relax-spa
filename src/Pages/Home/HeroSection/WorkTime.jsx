@@ -1,9 +1,17 @@
+// WorkTime section component contains:
+//  1) WorkTime section.
+//
+// In this component you found ( mui)
+//
+//  uses ( <WorkTime/>)
+
 import Box from "@mui/material/Box";
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 
 import { useStyles } from "./WorkTime.styles";
 
 const WorkTime = () => {
+  // WorkTime styles from './styles.js'.
   const classes = useStyles();
 
   return (

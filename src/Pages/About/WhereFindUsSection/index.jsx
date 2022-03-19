@@ -1,13 +1,24 @@
+// WhereFindUsSection components contains:
+//  1) WhereFindUsSection render.
+//  2) Render map from leaflet and react leaflet.
+//
+// In this component you found ( leaflet, react-leaflet, mui)
+//
+//  uses ( <WhereFindUsSection/>)
+
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import PhoneIcon from "@mui/icons-material/Phone";
 
-import { useStyles } from "./styles";
-import "./leaflet.css";
 import SectionsTitle from "../../../Layouts/SectionsTitle";
 
+import { useStyles } from "./styles";
+// styles for leaflet map conrol map size
+import "./leaflet.css";
+
 const WhereFindUsSection = () => {
+  // WhereFindUsSection styles from './styles.js'.
   const classes = useStyles();
 
   return (
@@ -55,6 +66,7 @@ const WhereFindUsSection = () => {
             </Grid>
           </Grid>
         </Grid>
+        {/* render map with react leaflet */}
         <Grid item xs={12} sm={6} className={classes.map}>
           <MapContainer center={[31.037933, 31.381523]} zoom={6}>
             <TileLayer

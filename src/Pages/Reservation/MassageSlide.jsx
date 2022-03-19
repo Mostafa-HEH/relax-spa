@@ -1,3 +1,10 @@
+// Personal Slide component contains:
+//  1) Personal Slide .
+//
+// In this component you found ( mui, formik)
+//
+//  uses ( <PersonalSlide step={current step} handleNext={handle next function } initialData={initialData for slide}/>)
+
 import React from "react";
 import { useFormik } from "formik";
 import Grid from "@mui/material/Grid";
@@ -9,13 +16,17 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Chip from "@mui/material/Chip";
 
-import { useStyles } from "./massageSlide.styles";
 import Buttons from "./Buttons";
+
+import { useStyles } from "./massageSlide.styles";
+
 import { servicesProducts } from "../../Services/Utils/fakeData";
 
 const MassageSlide = ({ step, handleNext, handleBack, initialData }) => {
+  // MassageSlide styles from './styles.js'.
   const classes = useStyles();
 
+  // Formik hock from frormik
   const formik = useFormik({
     initialValues: initialData,
     onSubmit: (values) => {
@@ -23,6 +34,7 @@ const MassageSlide = ({ step, handleNext, handleBack, initialData }) => {
     },
   });
 
+  // generate form for each person pased on person numbers from personal slide
   const personRenderHelper = (personsNumber) => {
     const personsForms = [];
 

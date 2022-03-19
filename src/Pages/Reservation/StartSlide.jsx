@@ -1,9 +1,17 @@
+// StartSlide section component contains:
+//  1) Start Slide .
+//
+// In this component you found ( mui)
+//
+//  uses ( <StartSlide setStep={set step function}/>)
+
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 
 import { useStyles } from "./startSlide.styles";
 
 const StartSlide = ({ setStep }) => {
+  // StartSlide styles from './styles.js'.
   const classes = useStyles();
 
   return (

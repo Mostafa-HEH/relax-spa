@@ -1,3 +1,10 @@
+// Personal Slide component contains:
+//  1) Personal Slide .
+//
+// In this component you found ( mui, formik)
+//
+//  uses ( <PersonalSlide step={current step} handleNext={handle next function } initialData={initialData for slide}/>)
+
 import React from "react";
 import { useFormik } from "formik";
 import Grid from "@mui/material/Grid";
@@ -7,12 +14,15 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 
-import { useStyles } from "./personalSlide.styles";
 import Buttons from "./Buttons";
 
+import { useStyles } from "./personalSlide.styles";
+
 const PersonalSlide = ({ step, handleNext, initialData }) => {
+  // PersonalSlide styles from './styles.js'.
   const classes = useStyles();
 
+  // Formik hock from frormik
   const formik = useFormik({
     initialValues: initialData,
     onSubmit: (values) => {

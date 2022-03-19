@@ -1,35 +1,34 @@
+// Offers section component contains:
+//  1) Offers Section .
+//
+// In this component you found ( mui)
+//
+//  uses ( <OffersSection/>)
+
 import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
-import { useStyles } from "./styles";
 import Slide from "./Slide";
-import slideOnePhoto from "../../../Assets/Images/home-special-offer.png";
-import slideTwoPhoto from '../../../Assets/Images/huum-xn_MghoT9HE-unsplash.jpg';
 
-const slides = [
-  {
-    id: 1,
-    image: slideOnePhoto,
-    title: "Special offer for you today",
-    subtitle: "100% free 15 minute massage",
-  },
-  {
-    id: 2,
-    image: slideTwoPhoto,
-    title: "Three days start from 10/3/2022",
-    subtitle: "Book and get free Sauna, Steam, Jacuzi ",
-  },
-];
+import { slides } from "../../../Services/Constants/home-offers";
+
+import { useStyles } from "./styles";
 
 const OffersSection = () => {
+  // current offer state - index -.
   const [step, setStep] = useState(0);
+
+  // OffersSection styles from './styles.js'.
   const classes = useStyles();
 
+  // render slide helper function
   const renderSlide = (currentStep) => {
+    // select slide pased on index
     let slideIndex = slides[currentStep];
 
+    // slide logic dont be less than 0 or more than offers length
     if (currentStep > slides.length - 1) {
       slideIndex = slides[0];
       setStep(0);
@@ -53,6 +52,7 @@ const OffersSection = () => {
   return (
     <Grid item container className={classes.container}>
       {renderSlide(step)}
+      {/* Arows */}
       <Grid item container className={classes.arrows}>
         <Grid item>
           <ArrowCircleLeftIcon

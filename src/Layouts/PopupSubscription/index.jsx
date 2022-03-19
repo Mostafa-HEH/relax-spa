@@ -1,17 +1,30 @@
+// PopupSubscription components contains:
+//  1) popup subscribtion give client discount.
+//
+// In this component you found (react route dom , Formik, sessionStorage api)
+//
+//  uses ( <PopupSubscription/> )
+
 import React, { useState, useEffect } from "react";
+import { useFormik } from "formik";
 import Grid from "@mui/material/Grid";
 import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import CloseIcon from "@mui/icons-material/Close";
-import { useFormik } from "formik";
 
 import { useStyles } from "./styles";
 
+// TODO - Handle submition to user data to show to cashier when client arrive.
+//      - Or send client email with discount code.
 const PopupSubscription = () => {
+  // control popup form to show only once for first one that client open site
   const [show, setShow] = useState(false);
+
+  // PopupSubscription styles from './styles.js'.
   const classes = useStyles({ show });
 
+  // formik hock
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -23,6 +36,7 @@ const PopupSubscription = () => {
   });
 
   useEffect(() => {
+    // create new session on sessionStorage api to record client first open.
     switch (sessionStorage.getItem("new_client_off")) {
       case null:
         setShow(true);

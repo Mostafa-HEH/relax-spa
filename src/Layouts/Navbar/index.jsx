@@ -1,43 +1,57 @@
+// Navbar components contains:
+//  1) fast links to site pages (Home - about us - our services - connect us - make appointment).
+//
+// In this component you found (react route dom , mui)
+//
+//  uses ( <Navbar/> )
+
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
 import List from "@mui/material/List";
 import Box from "@mui/material/Box";
 import ListItem from "@mui/material/ListItem";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
-import CallIcon from "@mui/icons-material/Call";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 
-import { useStyles } from "./styles";
 import Logo from "../Logo";
 
-function HideOnScroll(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
+import { navLinks } from "../../Services/Constants/navbar";
 
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
+import { useStyles } from "./styles";
 
 const Navbar = (props) => {
+  // active page link state
   const [active, setActive] = useState("home");
+
+  //  active drawer state if screen size less than meduim size.
   const [drawer, setDrawer] = useState(false);
+
+  // Catch medium size , turn true when get it.
   const drawerMatch = useMediaQuery((theme) => theme.breakpoints.down("md"));
+
+  // navbar styles from './styles.js'.
   const classes = useStyles(props);
+
+  // Trigger settings.
+  function HideOnScroll(props) {
+    const { children, window } = props;
+    const trigger = useScrollTrigger({
+      target: window ? window() : undefined,
+    });
+
+    return (
+      <Slide appear={false} direction="down" in={!trigger}>
+        {children}
+      </Slide>
+    );
+  }
 
   const toggleDrawer = (anchor) => (event) => {
     if (
@@ -51,6 +65,7 @@ const Navbar = (props) => {
   };
 
   useEffect(() => {
+    // Change active if page booked or refreshed
     switch (window.location.pathname) {
       case "/":
         setActive("home");
@@ -69,6 +84,7 @@ const Navbar = (props) => {
         break;
     }
 
+    // Scroll page to top when change between pages components.
     window.scroll({
       top: 0,
       left: 0,
@@ -76,11 +92,36 @@ const Navbar = (props) => {
     });
   }, [active]);
 
+  // render list of links
+  const listRender = () => {
+    return (
+      <List className={classes.navList}>
+        {/* Generate nav list items */}
+        {navLinks.map(({ id, name, icon, linkUrl, linkName }) => (
+          <ListItem
+            key={id}
+            className={`${classes.navListItem} ${
+              active === name ? classes.active : null
+            }`}
+            onClick={() => setActive(name)}
+          >
+            <Link to={linkUrl}>
+              {icon()}
+              <Box component="span">{linkName}</Box>
+            </Link>
+          </ListItem>
+        ))}
+      </List>
+    );
+  };
+
   return (
     <>
+      {/* Give space behind navbar to make page start after navbar */}
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar className={classes.appbar}>
+          {/* Render in small size if drawerMatch is true or other of big size */}
           {drawerMatch ? (
             <Toolbar className={classes.toolbar}>
               <Logo type="link" />
@@ -92,52 +133,8 @@ const Navbar = (props) => {
           ) : (
             <Toolbar className={classes.toolbar}>
               <Logo type="link" />
-              <List className={classes.navList}>
-                <ListItem
-                  className={`${classes.navListItem} ${
-                    active === "home" ? classes.active : null
-                  }`}
-                  onClick={() => setActive("home")}
-                >
-                  <Link to="/">
-                    <HomeIcon fontSize="small" />
-                    <Box component="span">Home</Box>
-                  </Link>
-                </ListItem>
-                <ListItem
-                  className={`${classes.navListItem} ${
-                    active === "about" ? classes.active : null
-                  }`}
-                  onClick={() => setActive("about")}
-                >
-                  <Link to="/about">
-                    <InfoIcon fontSize="small" />
-                    <Box component="span">About us</Box>
-                  </Link>
-                </ListItem>
-                <ListItem
-                  className={`${classes.navListItem} ${
-                    active === "services" ? classes.active : null
-                  }`}
-                  onClick={() => setActive("services")}
-                >
-                  <Link to="/services">
-                    <MedicalServicesIcon fontSize="small" />
-                    <Box component="span">Our services</Box>
-                  </Link>
-                </ListItem>
-                <ListItem
-                  className={`${classes.navListItem} ${
-                    active === "connect" ? classes.active : null
-                  }`}
-                  onClick={() => setActive("connect")}
-                >
-                  <Link to="/connectus">
-                    <CallIcon fontSize="small" />
-                    <Box component="span">Connect us</Box>
-                  </Link>
-                </ListItem>
-              </List>
+              {/* Render list item */}
+              {listRender()}
               <Button
                 variant="contained"
                 component={Link}
@@ -155,52 +152,8 @@ const Navbar = (props) => {
             className={classes.drawer}
           >
             <Logo type="link" />
-            <List className={classes.navList}>
-              <ListItem
-                className={`${classes.navListItem} ${
-                  active === "home" ? classes.active : null
-                }`}
-                onClick={() => setActive("home")}
-              >
-                <Link to="/">
-                  <HomeIcon fontSize="small" />
-                  <Box component="span">Home</Box>
-                </Link>
-              </ListItem>
-              <ListItem
-                className={`${classes.navListItem} ${
-                  active === "about" ? classes.active : null
-                }`}
-                onClick={() => setActive("about")}
-              >
-                <Link to="/about">
-                  <InfoIcon fontSize="small" />
-                  <Box component="span">About us</Box>
-                </Link>
-              </ListItem>
-              <ListItem
-                className={`${classes.navListItem} ${
-                  active === "services" ? classes.active : null
-                }`}
-                onClick={() => setActive("services")}
-              >
-                <Link to="/services">
-                  <MedicalServicesIcon fontSize="small" />
-                  <Box component="span">Our services</Box>
-                </Link>
-              </ListItem>
-              <ListItem
-                className={`${classes.navListItem} ${
-                  active === "connect" ? classes.active : null
-                }`}
-                onClick={() => setActive("connect")}
-              >
-                <Link to="/connectus">
-                  <CallIcon fontSize="small" />
-                  <Box component="span">Connect us</Box>
-                </Link>
-              </ListItem>
-            </List>
+            {/* Render list item */}
+            {listRender()}
             <Button
               variant="contained"
               component={Link}

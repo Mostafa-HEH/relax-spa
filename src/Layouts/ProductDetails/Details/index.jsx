@@ -1,9 +1,17 @@
+// Details components contains:
+//  1) details for product
+//
+// In this component you found ( mui)
+//
+//  uses ( <Details product={product object}/>)
+
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import { useStyles } from "./styles";
 
 const Details = ({ product }) => {
+  // Details styles from './styles.js'.
   const classes = useStyles();
 
   return (

@@ -1,5 +1,13 @@
+// MakeAppointment Section  component contains:
+//  1) HeroSection section.
+//
+// In this component you found ( mui,formik, react redux, react router dom )
+//
+//  uses ( <HeroSection/>)
+
 import React from "react";
 import { useFormik } from "formik";
+import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import InputLabel from "@mui/material/InputLabel";
@@ -9,16 +17,21 @@ import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { connect } from "react-redux";
 
-import { useStyles } from "./styles";
 import SectionsTitle from "../../../Layouts/SectionsTitle";
+
 import { homePageBookData } from "../../../Services/Actions";
 
+import { useStyles } from "./styles";
+
 const MakeAppointmentSection = (props) => {
+  // MakeAppointmentSection styles from './styles.js'.
   const classes = useStyles();
+
+  // navigate hock from react router dom;
   let navigate = useNavigate();
 
+  // formik hock from Formik
   const formik = useFormik({
     initialValues: {
       location: "",
@@ -29,7 +42,10 @@ const MakeAppointmentSection = (props) => {
       numberofperson: "",
     },
     onSubmit: (values) => {
+      // Action pass form data , action come from react redux
       props.homePageBookData(values);
+
+      // Redireact to reservation to continue booking
       navigate("/reservation");
     },
   });
@@ -143,6 +159,7 @@ const MakeAppointmentSection = (props) => {
   );
 };
 
+// connect function from react redux it connect state to pros to reducers
 export default connect(null, {
   homePageBookData,
 })(MakeAppointmentSection);

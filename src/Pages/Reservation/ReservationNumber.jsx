@@ -1,6 +1,14 @@
+// ReservationNumber Slide component contains:
+//  1) ReservationNumber Slide .
+//  2) Give client reservation Number
+//
+// In this component you found ( mui, react router dom)
+//
+//  uses ( <ReservationNumber reservationNumber={reservation number} />)
+
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 
 import { useStyles } from "./reservationNumber.styles";
 
